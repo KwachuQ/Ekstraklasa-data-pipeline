@@ -13,7 +13,7 @@ services:
       - ../postgres/init:/docker-entrypoint-initdb.d
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD", "pg_isready", "-U", "airflow"]
+      test: ["CMD", "pg_isready", "-U", "airflow", "-d", "dwh"]
       interval: 5s
       timeout: 5s
       retries: 5
@@ -33,7 +33,7 @@ services:
   
 
   x-airflow-common: &airflow-common
-    image: apache/airflow:3.0.6
+    build: .
     environment:
       &airflow-environment
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
@@ -41,6 +41,7 @@ services:
       AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/dwh
       AIRFLOW__CORE__LOAD_EXAMPLES: "false"
       AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: "true"
+      AIRFLOW__CORE__FERNET_KEY: "7A5cnRpnvL-b6pZcIiWbiQGxfIjlSPAmyyd6uIyggA8="
       # For S3/MinIO connection
       AIRFLOW__PROVIDERS_AMAZON__S3_ENDPOINT_URL: "http://minio:9000"
       AIRFLOW__PROVIDERS_AMAZON__AWS_ACCESS_KEY_ID: "minio"
@@ -49,6 +50,7 @@ services:
       - ./dags:/opt/airflow/dags
       - ./logs:/opt/airflow/logs
       - ./plugins:/opt/airflow/plugins
+      - ../airflow/scripts:/opt/airflow/scripts
     depends_on:
       postgres:
         condition: service_healthy
@@ -58,8 +60,7 @@ services:
   airflow-webserver:
     <<: *airflow-common
     container_name: airflow_webserver
-    command:  >
-      bash -c "pip install apache-airflow-providers-amazon boto3 && exec airflow api-server"
+    command: airflow api-server
     ports:
       - "8080:8080"
     restart: always
@@ -74,7 +75,7 @@ services:
   airflow-scheduler:
     <<: *airflow-common
     container_name: airflow_scheduler
-    command: scheduler
+    command: airflow scheduler
     healthcheck:
       test: ["CMD", "airflow", "jobs", "check", "--job-type", "SchedulerJob", "--hostname", "$${HOSTNAME}"]
       interval: 30s
@@ -92,7 +93,13 @@ services:
   airflow-init:
     <<: *airflow-common
     container_name: airflow_init
-    command: bash -c "airflow db migrate && airflow users create --role Admin --username airflow --email airflow@example.com --firstname admin --lastname admin --password airflow"
+    command: >
+      bash -c '
+        airflow db migrate && \
+        airflow users create --role Admin --username airflow --email airflow@example.com --firstname admin --lastname admin --password airflow && \
+        /opt/airflow/scripts/create_minio_conn.sh && \
+        bash /opt/airflow/scripts/create_minio_buckets.sh
+      '
     environment:
       <<: *airflow-environment
       _AIRFLOW_DB_MIGRATE: 'true'
