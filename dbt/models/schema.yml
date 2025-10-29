@@ -1,0 +1,187 @@
+version: 2
+
+models:
+  - name: fact_match
+    description: "Fact table containing match-level data"
+    columns:
+      - name: match_id
+        description: "Primary key - unique match identifier"
+        tests:
+          - unique
+          - not_null
+      - name: match_date
+        description: "Match date"
+        tests:
+          - not_null
+      - name: home_team_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_teams')
+              field: team_id
+      - name: away_team_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_teams')
+              field: team_id
+      - name: season_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_seasons')
+              field: season_id
+      - name: tournament_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_tournaments')
+              field: tournament_id
+      - name: status_type
+        tests:
+          - accepted_values:
+              values: ['finished']
+              config:
+                severity: warn
+      - name: winner_code
+        tests:
+          - accepted_values:
+              values: [1, 2, 3]
+              quote: false
+      - name: has_statistics
+        tests:
+          - accepted_values:
+              values: [0, 1]
+              quote: false
+
+  - name: fact_team_match
+    description: "Fact table with team-level match statistics"
+    columns:
+      - name: match_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('fact_match')
+              field: match_id
+      - name: team_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_teams')
+              field: team_id
+      - name: period
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['ALL', '1ST', '2ND']
+     
+
+  - name: fact_season_team
+    description: "Aggregated season-level team statistics"
+    columns:
+      - name: season_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_seasons')
+              field: season_id
+      - name: team_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_teams')
+              field: team_id
+      - name: matches_played
+        tests:
+          - not_null
+
+  - name: dim_teams
+    columns:
+      - name: team_id
+        tests:
+          - unique
+          - not_null
+      - name: team_name
+        tests:
+          - not_null
+
+  - name: dim_seasons
+    columns:
+      - name: season_id
+        tests:
+          - unique
+          - not_null
+      - name: season_year
+        tests:
+          - not_null
+
+  - name: dim_tournaments
+    columns:
+      - name: tournament_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_period
+    columns:
+      - name: period_code
+        tests:
+          - unique
+          - not_null
+          - accepted_values:
+              values: ['ALL', '1ST', '2ND']
+
+  - name: dim_date
+    columns:
+      - name: date_day
+        tests:
+          - unique
+          - not_null
+
+  - name: mart_team_overview
+    columns:
+      - name: team_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_teams')
+              field: team_id
+      - name: season_id
+        tests:
+          - not_null
+      - name: matches_played
+        tests:
+          - not_null
+      - name: total_points
+        tests:
+          - not_null
+
+  - name: mart_team_attack
+    columns:
+      - name: team_id
+        tests:
+          - not_null
+      - name: season_id
+        tests:
+          - not_null
+      - name: total_goals
+        tests:
+          - not_null
+
+  - name: mart_team_defense
+    columns:
+      - name: team_id
+        tests:
+          - not_null
+      - name: season_id
+        tests:
+          - not_null
+
+  - name: mart_team_form
+    columns:
+      - name: team_id
+        tests:
+          - not_null
+      - name: last_5_results
+        tests:
+          - not_null

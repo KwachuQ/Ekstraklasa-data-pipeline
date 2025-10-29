@@ -1,0 +1,65 @@
+version: 2
+
+sources:
+  - name: bronze
+    description: "Bronze layer tables with raw data from SofaScore API"
+    database: dwh
+    schema: bronze
+    tables:
+      - name: raw_matches
+        description: "Raw match data from SofaScore API stored as JSON"
+        columns:
+          - name: id
+            description: "Primary key"
+            tests:
+              - not_null
+              - unique
+          - name: data
+            description: "JSON data containing complete match information"
+            tests:
+              - not_null
+          - name: tournament_id
+          - name: season_id
+          - name: match_id
+          - name: ingestion_timestamp
+          - name: file_path
+          - name: batch_id
+            
+
+      - name: raw_stats
+        description: "Raw stats data from SofaScore API stored as JSON"
+        columns:
+          - name: id
+            description: "Primary key"
+            tests:
+              - not_null
+              - unique
+          - name: data
+            description: "JSON data containing complete stats information"
+            tests:
+              - not_null
+          - name: tournament_id
+          - name: season_id
+          - name: match_id
+          - name: ingestion_timestamp
+          - name: file_path
+          - name: batch_id
+          
+
+      - name: minio_json_files
+        description: "JSON files from MinIO bronze bucket"
+        external_location: "s3://bronze/"
+        file_format: json
+
+  - name: silver
+    database: dwh
+    schema: silver
+    tables:
+      - name: staging_matches
+      - name: staging_stats
+      - name: fact_matches
+      - name: fact_match_statistics
+      - name: dim_teams
+      - name: dim_seasons
+      - name: dim_tournaments
+      - name: dim_stat_types

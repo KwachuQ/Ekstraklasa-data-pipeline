@@ -1,0 +1,30 @@
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+
+-- Test: Check matches that should have statistics but don't
+
+select
+    fm.match_id,
+    fm.season_name,
+    fm.home_team_name,
+    fm.away_team_name,
+    fm.match_date,
+    count(distinct ftm.team_id) as teams_with_stats
+from "dwh"."silver"."fact_match" fm
+left join "dwh"."silver"."fact_team_match" ftm 
+    on fm.match_id = ftm.match_id 
+    and ftm.period = 'ALL'
+where fm.status_type = 'finished'
+group by fm.match_id, fm.season_name, fm.home_team_name, fm.away_team_name, fm.match_date
+having count(distinct ftm.team_id) = 0  -- No statistics at all
+  
+  
+      
+    ) dbt_internal_test

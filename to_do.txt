@@ -1,0 +1,1 @@
+1. Rozwiązać problem z niezgodnością w sumowaniu goli (gold != silver) i score consistency.

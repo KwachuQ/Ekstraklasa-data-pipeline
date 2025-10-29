@@ -1,0 +1,9 @@
+Data flow (update from recent round):
+
+ekstraklasa_update.py -> bronze_loader_recent_matches.py -> matches_full_data_incremental.sql -> -> fetch_today_statistics.py -> bronze_loader_recent_stats.py -> stats_full_data_incremental.sql -> silver_staging_incremental.py
+
+DAGS:
+
+ekstraklasa_update -> load_incremental_ekstraklasa_matches -> fetch_today_statistics -> load_incremental_ekstraklasa_statistics -> silver_staging_incremental
+-> dbt_silver_models -> dbt_gold_models
+

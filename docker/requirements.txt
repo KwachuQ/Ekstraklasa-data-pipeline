@@ -1,3 +1,11 @@
+# AWS/S3/MinIO providers
 apache-airflow-providers-amazon==9.12.0
 boto3==1.40.21
 minio==7.2.16
+
+# PostgreSQL provider
+apache-airflow-providers-postgres==5.12.0
+
+# Additional utilities
+pandas==2.1.4
+requests==2.31.0

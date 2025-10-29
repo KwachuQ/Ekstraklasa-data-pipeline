@@ -1,0 +1,6105 @@
+{
+  "generated_at": "2025-09-10T17:29:40.211531",
+  "total_countries": 250,
+  "total_tournaments": 0,
+  "countries": [
+    {
+      "name": "England",
+      "slug": "england",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 10,
+      "id": 1,
+      "flag": "england",
+      "alpha2": "EN",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "إنجلترا",
+          "hi": "इंग्लैंड",
+          "bn": "ইংল্যান্ড"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Spain",
+      "slug": "spain",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 9,
+      "id": 32,
+      "flag": "spain",
+      "alpha2": "ES",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "إسبانيا",
+          "hi": "स्पेन",
+          "bn": "স্পেন"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Germany",
+      "slug": "germany",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 8,
+      "id": 30,
+      "flag": "germany",
+      "alpha2": "DE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ألمانيا",
+          "hi": "जर्मनी",
+          "bn": "জার্মানি"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Italy",
+      "slug": "italy",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 7,
+      "id": 31,
+      "flag": "italy",
+      "alpha2": "IT",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "إيطاليا",
+          "hi": "इटली",
+          "bn": "ইতালি"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "France",
+      "slug": "france",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 6,
+      "id": 7,
+      "flag": "france",
+      "alpha2": "FR",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "فرنسا",
+          "hi": "फ्रांस",
+          "bn": "ফ্রান্স"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Afghanistan",
+      "slug": "afghanistan",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1084,
+      "flag": "afghanistan",
+      "alpha2": "AF",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أفغانستان"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Albania",
+      "slug": "albania",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 257,
+      "flag": "albania",
+      "alpha2": "AL",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ألبانيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Algeria",
+      "slug": "algeria",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 304,
+      "flag": "algeria",
+      "alpha2": "DZ",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الجزائر"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "American Samoa",
+      "slug": "american-samoa",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1787,
+      "flag": "american-samoa",
+      "alpha2": "AS",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ساموا الأمريكية"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Andorra",
+      "slug": "andorra",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 376,
+      "flag": "andorra",
+      "alpha2": "AD",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أندورا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Angola",
+      "slug": "angola",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 500,
+      "flag": "angola",
+      "alpha2": "AO",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أنغولا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Anguilla",
+      "slug": "anguilla",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1595,
+      "flag": "anguilla",
+      "alpha2": "AI",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أنغويلا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Antigua and Barbuda",
+      "slug": "antigua-and-barbuda",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1085,
+      "flag": "antigua-and-barbuda",
+      "alpha2": "AG",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أنتيغوا وبربودا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Argentina",
+      "slug": "argentina",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 48,
+      "flag": "argentina",
+      "alpha2": "AR",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الأرجنتين"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Argentina Amateur",
+      "slug": "argentina-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1783,
+      "flag": "argentina",
+      "alpha2": "AR",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الأرجنتين هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Armenia",
+      "slug": "armenia",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 296,
+      "flag": "armenia",
+      "alpha2": "AM",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أرمينيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Armenia Amateur",
+      "slug": "armenia-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1828,
+      "flag": "armenia",
+      "alpha2": "AM",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أرمينيا هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Aruba",
+      "slug": "aruba",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1086,
+      "flag": "aruba",
+      "alpha2": "AW",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أروبا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Australia",
+      "slug": "australia",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 34,
+      "flag": "australia",
+      "alpha2": "AU",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أستراليا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Australia Amateur",
+      "slug": "australia-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1876,
+      "flag": "australia",
+      "alpha2": "AU",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أستراليا هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Austria",
+      "slug": "austria",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 17,
+      "flag": "austria",
+      "alpha2": "AT",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "النمسا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Austria Amateur",
+      "slug": "austria-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 97,
+      "flag": "austria",
+      "alpha2": "AT",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "النمسا هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Azerbaijan",
+      "slug": "azerbaijan",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 297,
+      "flag": "azerbaijan",
+      "alpha2": "AZ",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أذربيجان"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Bahamas",
+      "slug": "bahamas",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1087,
+      "flag": "bahamas",
+      "alpha2": "BS",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "جزر البهاماس"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Bahrain",
+      "slug": "bahrain",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 351,
+      "flag": "bahrain",
+      "alpha2": "BH",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "البحرين"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Bangladesh",
+      "slug": "bangladesh",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1088,
+      "flag": "bangladesh",
+      "alpha2": "BD",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بنغلاديش"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Barbados",
+      "slug": "barbados",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1089,
+      "flag": "barbados",
+      "alpha2": "BB",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بربادوس"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Belarus",
+      "slug": "belarus",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 91,
+      "flag": "belarus",
+      "alpha2": "BY",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيلاروسيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Belgium",
+      "slug": "belgium",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 33,
+      "flag": "belgium",
+      "alpha2": "BE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بلجيكا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Belgium Amateur",
+      "slug": "belgium-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1620,
+      "flag": "belgium",
+      "alpha2": "BE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بلجيكا هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Belize",
+      "slug": "belize",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1090,
+      "flag": "belize",
+      "alpha2": "BZ",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بليز"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Benin",
+      "slug": "benin",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1485,
+      "flag": "benin",
+      "alpha2": "BJ",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بنين"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Bermuda",
+      "slug": "bermuda",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1091,
+      "flag": "bermuda",
+      "alpha2": "BM",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "برمودا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Bhutan",
+      "slug": "bhutan",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1556,
+      "flag": "bhutan",
+      "alpha2": "BT",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بوتان"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Bolivia",
+      "slug": "bolivia",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 379,
+      "flag": "bolivia",
+      "alpha2": "BO",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بوليفيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Bosnia & Herzegovina",
+      "slug": "bosnia-herzegovina",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 158,
+      "flag": "bosnia-herzegovina",
+      "alpha2": "BA",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "البوسنة والهرسك"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Bosnia & Herzegovina Amateur",
+      "slug": "bosnia-and-herzegovina-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1582,
+      "flag": "bosnia-herzegovina",
+      "alpha2": "BA",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "البوسنة والهرسك هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Botswana",
+      "slug": "botswana",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1020,
+      "flag": "botswana",
+      "alpha2": "BW",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بوتسوانا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Brazil",
+      "slug": "brazil",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 13,
+      "flag": "brazil",
+      "alpha2": "BR",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "البرازيل"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Brazil Amateur",
+      "slug": "brazil-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1694,
+      "flag": "brazil",
+      "alpha2": "BR",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "البرازيل هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "British Virgin Islands",
+      "slug": "british-virgin-islands",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1711,
+      "flag": "british-virgin-islands",
+      "alpha2": "VG",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "جزر فيرجن البريطانية"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Brunei",
+      "slug": "brunei",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1617,
+      "flag": "brunei",
+      "alpha2": "BN",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بروناي"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Bulgaria",
+      "slug": "bulgaria",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 78,
+      "flag": "bulgaria",
+      "alpha2": "BG",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بلغاريا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Bulgaria Amateur",
+      "slug": "bulgaria-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1590,
+      "flag": "bulgaria",
+      "alpha2": "BG",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بلغاريا هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Burundi",
+      "slug": "burundi",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1093,
+      "flag": "burundi",
+      "alpha2": "BI",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بوروندي"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Cambodia",
+      "slug": "cambodia",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1094,
+      "flag": "cambodia",
+      "alpha2": "KH",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كمبوديا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Cameroon",
+      "slug": "cameroon",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 391,
+      "flag": "cameroon",
+      "alpha2": "CM",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الكاميرون"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Canada",
+      "slug": "canada",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 388,
+      "flag": "canada",
+      "alpha2": "CA",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كندا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Cape Verde",
+      "slug": "cape-verde",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1685,
+      "flag": "cape-verde",
+      "alpha2": "CV",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الرأس الأخضر"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Cayman Islands",
+      "slug": "cayman-islands",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1095,
+      "flag": "cayman-islands",
+      "alpha2": "KY",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "جزر كايمان"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Chad",
+      "slug": "chad",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1096,
+      "flag": "chad",
+      "alpha2": "TD",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "تشاد"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Chile",
+      "slug": "chile",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 49,
+      "flag": "chile",
+      "alpha2": "CL",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "تشيلي"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Chile Amateur",
+      "slug": "chile-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1687,
+      "flag": "chile",
+      "alpha2": "CL",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "تشيلي هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "China",
+      "slug": "china",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 99,
+      "flag": "china",
+      "alpha2": "CN",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الصين"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Chinese Taipei",
+      "slug": "chinese-taipei",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1097,
+      "flag": "taiwan",
+      "alpha2": "TW",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "تايوان"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Colombia",
+      "slug": "colombia",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 274,
+      "flag": "colombia",
+      "alpha2": "CO",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كولومبيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Comoros",
+      "slug": "comoros",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1098,
+      "flag": "comoros",
+      "alpha2": "KM",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "جزر القمر"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Congo Republic",
+      "slug": "congo-republic",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1137,
+      "flag": "congo",
+      "alpha2": "CG",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الكونغو - برازافيل"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Cook Islands",
+      "slug": "cook-islands",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1795,
+      "flag": "cook-islands",
+      "alpha2": "CK",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "جزر كوك"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Costa Rica",
+      "slug": "costa-rica",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 289,
+      "flag": "costa-rica",
+      "alpha2": "CR",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كوستاريكا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Croatia",
+      "slug": "croatia",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 14,
+      "flag": "croatia",
+      "alpha2": "HR",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كرواتيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Croatia Amateur",
+      "slug": "croatia-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1578,
+      "flag": "croatia",
+      "alpha2": "HR",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كرواتيا هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Curacao",
+      "slug": "curacao",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1099,
+      "flag": "curacao",
+      "alpha2": "CW",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كوراساو"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Cyprus",
+      "slug": "cyprus",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 102,
+      "flag": "cyprus",
+      "alpha2": "CY",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "قبرص"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Czech Republic",
+      "slug": "czech-republic",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 18,
+      "flag": "czech-republic",
+      "alpha2": "CZ",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "التشيك"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Czechia Amateur",
+      "slug": "czechia-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1816,
+      "flag": "czech-republic",
+      "alpha2": "CZ",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "التشيك هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Côte d'Ivoire",
+      "slug": "ivory-coast",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 390,
+      "flag": "ivory-coast",
+      "alpha2": "CI",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ساحل العاج"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "DR Congo",
+      "slug": "dr-congo",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1101,
+      "flag": "dr-congo",
+      "alpha2": "CD",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الكونغو - كينشاسا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Denmark",
+      "slug": "denmark",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 8,
+      "flag": "denmark",
+      "alpha2": "DK",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الدانمرك"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Denmark Amateur",
+      "slug": "denmark-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 95,
+      "flag": "denmark",
+      "alpha2": "DK",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الدانمرك هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Dominica",
+      "slug": "dominica",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1522,
+      "flag": "dominica",
+      "alpha2": "DM",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "دومينيكا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Dominican Republic",
+      "slug": "dominican-republic",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1457,
+      "flag": "dominican-rep",
+      "alpha2": "DO",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "جمهورية الدومينيكان"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Ecuador",
+      "slug": "ecuador",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 165,
+      "flag": "ecuador",
+      "alpha2": "EC",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الإكوادور"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Ecuador Amateur",
+      "slug": "ecuador-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1811,
+      "flag": "ecuador",
+      "alpha2": "EC",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الإكوادور هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Egypt",
+      "slug": "egypt",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 305,
+      "flag": "egypt",
+      "alpha2": "EG",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "مصر"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "El Salvador",
+      "slug": "el-salvador",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 367,
+      "flag": "el-salvador",
+      "alpha2": "SV",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "السلفادور"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "England Amateur",
+      "slug": "england-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 252,
+      "flag": "england",
+      "alpha2": "EN",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "إنجلترا هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Estonia",
+      "slug": "estonia",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 92,
+      "flag": "estonia",
+      "alpha2": "EE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "إستونيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Eswatini",
+      "slug": "swaziland",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1148,
+      "flag": "swaziland",
+      "alpha2": "SZ",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "إسواتيني"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Ethiopia",
+      "slug": "ethiopia",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1102,
+      "flag": "ethiopia",
+      "alpha2": "ET",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "إثيوبيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Faroe Islands",
+      "slug": "faroe-islands",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 201,
+      "flag": "faroe-islands",
+      "alpha2": "FO",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "جزر فارو"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Fiji",
+      "slug": "fiji",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1103,
+      "flag": "fiji",
+      "alpha2": "FJ",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "فيجي"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Finland",
+      "slug": "finland",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 19,
+      "flag": "finland",
+      "alpha2": "FI",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "فنلندا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "France Amateur",
+      "slug": "france-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1626,
+      "flag": "france",
+      "alpha2": "FR",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "فرنسا هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "French Guiana",
+      "slug": "french-guiana",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1596,
+      "flag": "french-guyana",
+      "alpha2": "GF",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "غويانا الفرنسية"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Gabon",
+      "slug": "gabon",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1104,
+      "flag": "gabon",
+      "alpha2": "GA",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الغابون"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Gambia",
+      "slug": "gambia",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1105,
+      "flag": "gambia",
+      "alpha2": "GM",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "غامبيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Georgia",
+      "slug": "georgia",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 270,
+      "flag": "georgia",
+      "alpha2": "GE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "جورجيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Germany Amateur",
+      "slug": "germany-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 122,
+      "flag": "germany",
+      "alpha2": "DE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ألمانيا هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Ghana",
+      "slug": "ghana",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 542,
+      "flag": "ghana",
+      "alpha2": "GH",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "غانا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Gibraltar",
+      "slug": "gibraltar",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 938,
+      "flag": "gibraltar",
+      "alpha2": "GI",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "جبل طارق"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Greece",
+      "slug": "greece",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 67,
+      "flag": "greece",
+      "alpha2": "GR",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "اليونان"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Greece Amateur",
+      "slug": "greece-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1625,
+      "flag": "greece",
+      "alpha2": "GR",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "اليونان هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Greenland",
+      "slug": "greenland",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1807,
+      "flag": "greenland",
+      "alpha2": "GL",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "غرينلاند"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Grenada",
+      "slug": "grenada",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1612,
+      "flag": "grenada",
+      "alpha2": "GD",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "غرينادا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Guadeloupe",
+      "slug": "guadeloupe",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1794,
+      "flag": "guadeloupe",
+      "alpha2": "GP",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "غوادلوب"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Guam",
+      "slug": "guam",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1106,
+      "flag": "guam",
+      "alpha2": "GU",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "غوام"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Guatemala",
+      "slug": "guatemala",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 365,
+      "flag": "guatemala",
+      "alpha2": "GT",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "غواتيمالا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Guinea",
+      "slug": "guinea",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1107,
+      "flag": "guinea",
+      "alpha2": "GN",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "غينيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Honduras",
+      "slug": "honduras",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 437,
+      "flag": "honduras",
+      "alpha2": "HN",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "هندوراس"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Hong Kong",
+      "slug": "hong-kong",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 339,
+      "flag": "hong-kong",
+      "alpha2": "HK",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "هونغ كونغ الصينية"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Hungary",
+      "slug": "hungary",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 11,
+      "flag": "hungary",
+      "alpha2": "HU",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "هنغاريا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Hungary Amateur",
+      "slug": "hungary-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1594,
+      "flag": "hungary",
+      "alpha2": "HU",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "هنغاريا هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Iceland",
+      "slug": "iceland",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 10,
+      "flag": "iceland",
+      "alpha2": "IS",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "آيسلندا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Africa",
+      "slug": "africa",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 16,
+      "id": 1466,
+      "flag": "africa",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أفريقيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Asia",
+      "slug": "asia",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 17,
+      "id": 1467,
+      "flag": "asia",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "آسيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Europe",
+      "slug": "europe",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 19,
+      "id": 1465,
+      "flag": "europe",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أوروبا",
+          "hi": "यूरोप",
+          "bn": "ইউরোপ"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "North & Central America",
+      "slug": "north-central-america",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 15,
+      "id": 1469,
+      "flag": "north-and-central-america",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أمريكا الشمالية والوسطى"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "South America",
+      "slug": "south-america",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 18,
+      "id": 1470,
+      "flag": "south-america",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أمريكا الجنوبية"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Oceania",
+      "slug": "oceania",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 14,
+      "id": 1471,
+      "flag": "oceania",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أوقيانوسيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "India",
+      "slug": "india",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 352,
+      "flag": "india",
+      "alpha2": "IN",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الهند"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "India Amateur",
+      "slug": "india-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1598,
+      "flag": "india",
+      "alpha2": "IN",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الهند هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Indonesia",
+      "slug": "indonesia",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 368,
+      "flag": "indonesia",
+      "alpha2": "ID",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "إندونيسيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "World",
+      "slug": "world",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 20,
+      "id": 1468,
+      "flag": "international",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "العالم",
+          "hi": "विश्व",
+          "bn": "বিশ্ব"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Iran",
+      "slug": "iran",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 301,
+      "flag": "iran",
+      "alpha2": "IR",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "إيران"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Iraq",
+      "slug": "iraq",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1111,
+      "flag": "iraq",
+      "alpha2": "IQ",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "العراق"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Colombia Amateur",
+      "slug": "colombia-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1919,
+      "flag": "colombia",
+      "alpha2": "CO",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كولومبيا هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Ireland",
+      "slug": "ireland",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 51,
+      "flag": "ireland",
+      "alpha2": "IE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أيرلندا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Israel",
+      "slug": "israel",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 66,
+      "flag": "israel",
+      "alpha2": "IL",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "إسرائيل",
+          "hi": "इज़राइल",
+          "bn": "ইসরায়েল"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Italy Amateur",
+      "slug": "italy-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1600,
+      "flag": "italy",
+      "alpha2": "IT",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "إيطاليا هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Jamaica",
+      "slug": "jamaica",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 502,
+      "flag": "jamaica",
+      "alpha2": "JM",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "جامايكا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Japan",
+      "slug": "japan",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 52,
+      "flag": "japan",
+      "alpha2": "JP",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "اليابان"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Japan Amateur",
+      "slug": "japan-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1632,
+      "flag": "japan",
+      "alpha2": "JP",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "اليابان هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Jordan",
+      "slug": "jordan",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 329,
+      "flag": "jordan",
+      "alpha2": "JO",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الأردن"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Kazakhstan",
+      "slug": "kazakhstan",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 278,
+      "flag": "kazakhstan",
+      "alpha2": "KZ",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كازاخستان"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Kenya",
+      "slug": "kenya",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 805,
+      "flag": "kenya",
+      "alpha2": "KE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كينيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Kosovo",
+      "slug": "kosovo",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1112,
+      "flag": "kosovo",
+      "alpha2": "XK",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كوسوفو"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Kuwait",
+      "slug": "kuwait",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 331,
+      "flag": "kuwait",
+      "alpha2": "KW",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الكويت"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Kuwait Amateur",
+      "slug": "kuwait-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1883,
+      "flag": "kuwait",
+      "alpha2": "KW",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الكويت هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Kyrgyzstan",
+      "slug": "kyrgyzstan",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1113,
+      "flag": "kyrgyzstan",
+      "alpha2": "KG",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "قيرغيزستان"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Laos",
+      "slug": "laos",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1114,
+      "flag": "laos",
+      "alpha2": "LA",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "لاوس"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Latvia",
+      "slug": "latvia",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 163,
+      "flag": "latvia",
+      "alpha2": "LV",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "لاتفيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Lebanon",
+      "slug": "lebanon",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 428,
+      "flag": "lebanon",
+      "alpha2": "LB",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "لبنان"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Lesotho",
+      "slug": "lesotho",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1115,
+      "flag": "lesotho",
+      "alpha2": "LS",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ليسوتو"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Liberia",
+      "slug": "liberia",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1116,
+      "flag": "liberia",
+      "alpha2": "LR",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ليبيريا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Libya",
+      "slug": "libya",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1117,
+      "flag": "libya",
+      "alpha2": "LY",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ليبيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Liechtenstein",
+      "slug": "liechtenstein",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 512,
+      "flag": "liechtenstein",
+      "alpha2": "LI",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ليختنشتاين"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Lithuania",
+      "slug": "lithuania",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 160,
+      "flag": "lithuania",
+      "alpha2": "LT",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ليتوانيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Lithuania Amateur",
+      "slug": "lithuania-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1872,
+      "flag": "lithuania",
+      "alpha2": "LT",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ليتوانيا هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Luxembourg",
+      "slug": "luxembourg",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 197,
+      "flag": "luxembourg",
+      "alpha2": "LU",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "لوكسمبورغ"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Macao",
+      "slug": "macao",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1118,
+      "flag": "macao",
+      "alpha2": "MO",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "منطقة ماكاو الإدارية الخاصة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Madagascar",
+      "slug": "madagascar",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1119,
+      "flag": "madagascar",
+      "alpha2": "MG",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "مدغشقر"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Malaysia",
+      "slug": "malaysia",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 85,
+      "flag": "malaysia",
+      "alpha2": "MY",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ماليزيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Malta",
+      "slug": "malta",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 134,
+      "flag": "malta",
+      "alpha2": "MT",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "مالطا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Martinique",
+      "slug": "martinique",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1635,
+      "flag": "martinique",
+      "alpha2": "MQ",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "جزر المارتينيك"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Mauritania",
+      "slug": "mauritania",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1123,
+      "flag": "mauritania",
+      "alpha2": "MR",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "موريتانيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Mauritius",
+      "slug": "mauritius",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1124,
+      "flag": "mauritius",
+      "alpha2": "MU",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "موريشيوس"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Mayotte",
+      "slug": "mayotte",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1799,
+      "flag": "mayotte",
+      "alpha2": "YT",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "مايوت"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Mexico",
+      "slug": "mexico",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 12,
+      "flag": "mexico",
+      "alpha2": "MX",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "المكسيك"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Mexico Amateur",
+      "slug": "mexico-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1704,
+      "flag": "mexico",
+      "alpha2": "MX",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "المكسيك هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Moldova",
+      "slug": "moldova",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 279,
+      "flag": "moldova",
+      "alpha2": "MD",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "مولدوفا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Mongolia",
+      "slug": "mongolia",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1459,
+      "flag": "mongolia",
+      "alpha2": "MN",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "منغوليا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Montenegro",
+      "slug": "montenegro",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 386,
+      "flag": "montenegro",
+      "alpha2": "ME",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الجبل الأسود"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Montenegro Amateur",
+      "slug": "montenegro-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1631,
+      "flag": "montenegro",
+      "alpha2": "ME",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الجبل الأسود هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Morocco",
+      "slug": "morocco",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 303,
+      "flag": "morocco",
+      "alpha2": "MA",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "المغرب"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Morocco Amateur",
+      "slug": "morocco-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1641,
+      "flag": "morocco",
+      "alpha2": "MA",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "المغرب هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Mozambique",
+      "slug": "mozambique",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1125,
+      "flag": "mozambique",
+      "alpha2": "MZ",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "موزمبيق"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Myanmar",
+      "slug": "myanmar",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1126,
+      "flag": "burma",
+      "alpha2": "MM",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ميانمار (بورما)"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Namibia",
+      "slug": "namibia",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1127,
+      "flag": "namibia",
+      "alpha2": "NA",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ناميبيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Nepal",
+      "slug": "nepal",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1128,
+      "flag": "nepal",
+      "alpha2": "NP",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "نيبال"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Netherlands",
+      "slug": "netherlands",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 35,
+      "flag": "netherlands",
+      "alpha2": "NL",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "هولندا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Netherlands Amateur",
+      "slug": "netherlands-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1587,
+      "flag": "netherlands",
+      "alpha2": "NL",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "هولندا هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "New Caledonia",
+      "slug": "new-caledonia",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1129,
+      "flag": "new-caledonia",
+      "alpha2": "NC",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كاليدونيا الجديدة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "New Zealand",
+      "slug": "new-zealand",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 148,
+      "flag": "new-zealand",
+      "alpha2": "NZ",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "نيوزيلندا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Nicaragua",
+      "slug": "nicaragua",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1130,
+      "flag": "nicaragua",
+      "alpha2": "NI",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "نيكاراغوا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Nigeria",
+      "slug": "nigeria",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1132,
+      "flag": "nigeria",
+      "alpha2": "NG",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "نيجيريا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "North Macedonia",
+      "slug": "north-macedonia",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 159,
+      "flag": "macedonia",
+      "alpha2": "MK",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "مقدونيا الشمالية"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Northern Ireland",
+      "slug": "northern-ireland",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 130,
+      "flag": "northern-ireland",
+      "alpha2": "NX",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أيرلندا الشمالية"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Northern Mariana Islands",
+      "slug": "northern-mariana-islands",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1819,
+      "flag": "northern-mariana-islands",
+      "alpha2": "MP",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "جزر ماريانا الشمالية"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Norway",
+      "slug": "norway",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 5,
+      "flag": "norway",
+      "alpha2": "NO",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "النرويج"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Norway Amateur",
+      "slug": "norway-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 94,
+      "flag": "norway",
+      "alpha2": "NO",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "النرويج هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Oman",
+      "slug": "oman",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 415,
+      "flag": "oman",
+      "alpha2": "OM",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "عُمان"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Pakistan",
+      "slug": "pakistan",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 755,
+      "flag": "pakistan",
+      "alpha2": "PK",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "باكستان"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Palestine",
+      "slug": "palestine",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1134,
+      "flag": "palestine",
+      "alpha2": "PS",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الأراضي الفلسطينية"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Panama",
+      "slug": "panama",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 526,
+      "flag": "panama",
+      "alpha2": "PA",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بنما"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Papua New Guinea",
+      "slug": "papua-new-guinea",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1135,
+      "flag": "papua-new-guinea",
+      "alpha2": "PG",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بابوا غينيا الجديدة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Paraguay",
+      "slug": "paraguay",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 280,
+      "flag": "paraguay",
+      "alpha2": "PY",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "باراغواي"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Peru",
+      "slug": "peru",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 20,
+      "flag": "peru",
+      "alpha2": "PE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بيرو"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Philippines",
+      "slug": "philippines",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 847,
+      "flag": "philippines",
+      "alpha2": "PH",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الفلبين"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Poland",
+      "slug": "poland",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 47,
+      "flag": "poland",
+      "alpha2": "PL",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بولندا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Poland Amateur",
+      "slug": "poland-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1621,
+      "flag": "poland",
+      "alpha2": "PL",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بولندا هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Portugal",
+      "slug": "portugal",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 44,
+      "flag": "portugal",
+      "alpha2": "PT",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "البرتغال"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Portugal Amateur",
+      "slug": "portugal-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1583,
+      "flag": "portugal",
+      "alpha2": "PT",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "البرتغال هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Puerto Rico",
+      "slug": "puerto-rico",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1136,
+      "flag": "puerto-rico",
+      "alpha2": "PR",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بورتوريكو"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Qatar",
+      "slug": "qatar",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 353,
+      "flag": "qatar",
+      "alpha2": "QA",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "قطر"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Romania",
+      "slug": "romania",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 77,
+      "flag": "romania",
+      "alpha2": "RO",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "رومانيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Romania Amateur",
+      "slug": "romania-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1599,
+      "flag": "romania",
+      "alpha2": "RO",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "رومانيا هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Russia",
+      "slug": "russia",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 21,
+      "flag": "russia",
+      "alpha2": "RU",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "روسيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Russia Amateur",
+      "slug": "russia-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1615,
+      "flag": "russia",
+      "alpha2": "RU",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "روسيا هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Rwanda",
+      "slug": "rwanda",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1021,
+      "flag": "rwanda",
+      "alpha2": "RW",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "رواندا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Saint Kitts and Nevis",
+      "slug": "saint-kitts-and-nevis",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1493,
+      "flag": "st-kitts-and-nevis",
+      "alpha2": "KN",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "سانت كيتس ونيفيس"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Saint Martin",
+      "slug": "saint-martin",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1865,
+      "flag": "saint-martin-french-part",
+      "alpha2": "MF",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "سان مارتن"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Saint Vincent and the Grenadines",
+      "slug": "saint-vincent-and-the-grenadines",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1709,
+      "flag": "saint-vincent-and-the-grenadines",
+      "alpha2": "VC",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "سانت فنسنت وجزر غرينادين"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Samoa",
+      "slug": "samoa",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1138,
+      "flag": "samoa",
+      "alpha2": "WS",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ساموا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "San Marino",
+      "slug": "san-marino",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 387,
+      "flag": "san-marino",
+      "alpha2": "SM",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "سان مارينو"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Sao Tome and Principe",
+      "slug": "sao-tome-and-principe",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1139,
+      "flag": "sao-tome-and-principe",
+      "alpha2": "ST",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ساو تومي وبرينسيبي"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Saudi Arabia",
+      "slug": "saudi-arabia",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 310,
+      "flag": "saudi-arabia",
+      "alpha2": "SA",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "السعودية",
+          "hi": "सऊदी अरब",
+          "bn": "সৌদি আরব"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Scotland",
+      "slug": "scotland",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 22,
+      "flag": "scotland",
+      "alpha2": "SX",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "اسكتلندا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Scotland Amateur",
+      "slug": "scotland-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1697,
+      "flag": "scotland",
+      "alpha2": "SX",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "اسكتلندا هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Senegal",
+      "slug": "senegal",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 886,
+      "flag": "senegal",
+      "alpha2": "SN",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "السنغال"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Serbia",
+      "slug": "serbia",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 152,
+      "flag": "serbia",
+      "alpha2": "RS",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "صربيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Serbia Amateur",
+      "slug": "serbia-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1579,
+      "flag": "serbia",
+      "alpha2": "RS",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "صربيا هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Seychelles",
+      "slug": "seychelles",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1140,
+      "flag": "seychelles",
+      "alpha2": "SC",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "سيشل"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Sierra Leone",
+      "slug": "sierra-leone",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1141,
+      "flag": "sierra-leone",
+      "alpha2": "SL",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "سيراليون"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Singapore",
+      "slug": "singapore",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 45,
+      "flag": "singapore",
+      "alpha2": "SG",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "سنغافورة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Sint Maarten",
+      "slug": "sint-maarten",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1797,
+      "flag": "sint-maarten-dutch-part",
+      "alpha2": "SW",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "سانت مارتن"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Slovakia",
+      "slug": "slovakia",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 23,
+      "flag": "slovakia",
+      "alpha2": "SK",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "سلوفاكيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Slovenia",
+      "slug": "slovenia",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 24,
+      "flag": "slovenia",
+      "alpha2": "SI",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "سلوفينيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Slovenia Amateur",
+      "slug": "slovenia-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1623,
+      "flag": "slovenia",
+      "alpha2": "SI",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "سلوفينيا هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Solomon Islands",
+      "slug": "solomon-islands",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1142,
+      "flag": "solomon-islands",
+      "alpha2": "SB",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "جزر سليمان"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Somalia",
+      "slug": "somalia",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1143,
+      "flag": "somalia",
+      "alpha2": "SO",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الصومال"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "South Africa",
+      "slug": "south-africa",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 322,
+      "flag": "south-africa",
+      "alpha2": "ZA",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "جنوب أفريقيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "South Korea",
+      "slug": "south-korea",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 291,
+      "flag": "south-korea",
+      "alpha2": "KR",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "كوريا الجنوبية"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "South Sudan",
+      "slug": "south-sudan",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1144,
+      "flag": "south-sudan",
+      "alpha2": "SS",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "جنوب السودان"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Spain Amateur",
+      "slug": "spain-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 421,
+      "flag": "spain",
+      "alpha2": "ES",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "إسبانيا هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Suriname",
+      "slug": "suriname",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1147,
+      "flag": "surinam",
+      "alpha2": "SR",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "سورينام"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Sweden",
+      "slug": "sweden",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 9,
+      "flag": "sweden",
+      "alpha2": "SE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "السويد"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Sweden Amateur",
+      "slug": "sweden-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 155,
+      "flag": "sweden",
+      "alpha2": "SE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "السويد هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Switzerland",
+      "slug": "switzerland",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 25,
+      "flag": "switzerland",
+      "alpha2": "CH",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "سويسرا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Switzerland Amateur",
+      "slug": "switzerland-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1693,
+      "flag": "switzerland",
+      "alpha2": "CH",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "سويسرا هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Syria",
+      "slug": "syria",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 380,
+      "flag": "syria",
+      "alpha2": "SY",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "سوريا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Tahiti",
+      "slug": "tahiti",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1149,
+      "flag": "tahiti",
+      "alpha2": "PF",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "تاهيتي"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Tajikistan",
+      "slug": "tajikistan",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1150,
+      "flag": "tajikistan",
+      "alpha2": "TJ",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "طاجيكستان"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Tanzania",
+      "slug": "tanzania",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1151,
+      "flag": "tanzania",
+      "alpha2": "TZ",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "تنزانيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Thailand",
+      "slug": "thailand",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 485,
+      "flag": "thailand",
+      "alpha2": "TH",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "تايلاند"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Timor Leste",
+      "slug": "timor-leste",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1628,
+      "flag": "timor-leste",
+      "alpha2": "TL",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "تيمور الشرقية"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Tonga",
+      "slug": "tonga",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1815,
+      "flag": "tonga",
+      "alpha2": "TO",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "تونغا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Trinidad and Tobago",
+      "slug": "trinidad-and-tobago",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1153,
+      "flag": "trinidad-and-tobago",
+      "alpha2": "TT",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ترينيداد وتوباغو"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Tunisia",
+      "slug": "tunisia",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 378,
+      "flag": "tunisia",
+      "alpha2": "TN",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "تونس"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Turkey",
+      "slug": "turkey",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 46,
+      "flag": "turkey",
+      "alpha2": "TR",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "تركيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Turkey Amateur",
+      "slug": "turkey-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 254,
+      "flag": "turkey",
+      "alpha2": "TR",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "تركيا هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Turkmenistan",
+      "slug": "turkmenistan",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1154,
+      "flag": "turkmenistan",
+      "alpha2": "TM",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "تركمانستان"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Turks and Caicos Islands",
+      "slug": "turks-and-caicos-islands",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1793,
+      "flag": "turks-and-caicos-islands",
+      "alpha2": "TC",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "جزر توركس وكايكوس"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "US Virgin Islands",
+      "slug": "us-virgin-islands",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1804,
+      "flag": "virgin-islands-us",
+      "alpha2": "VI",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "جزر فيرجن الأمريكية"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "USA",
+      "slug": "usa",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 26,
+      "flag": "usa",
+      "alpha2": "US",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الولايات المتحدة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "USA Amateur",
+      "slug": "usa-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1597,
+      "flag": "usa",
+      "alpha2": "US",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الولايات المتحدة هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Uganda",
+      "slug": "uganda",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1022,
+      "flag": "uganda",
+      "alpha2": "UG",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أوغندا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Ukraine",
+      "slug": "ukraine",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 86,
+      "flag": "ukraine",
+      "alpha2": "UA",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أوكرانيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "United Arab Emirates",
+      "slug": "united-arab-emirates",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 299,
+      "flag": "united-arab-emirates",
+      "alpha2": "AE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "الإمارات العربية المتحدة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Uruguay",
+      "slug": "uruguay",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 57,
+      "flag": "uruguay",
+      "alpha2": "UY",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أورغواي"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Uruguay Amateur",
+      "slug": "uruguay-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1786,
+      "flag": "uruguay",
+      "alpha2": "UY",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أورغواي هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Uzbekistan",
+      "slug": "uzbekistan",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 385,
+      "flag": "uzbekistan",
+      "alpha2": "UZ",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "أوزبكستان"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Vanuatu",
+      "slug": "vanuatu",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1155,
+      "flag": "vanuatu",
+      "alpha2": "VU",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "فانواتو"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Venezuela",
+      "slug": "venezuela",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 281,
+      "flag": "venezuela",
+      "alpha2": "VE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "فنزويلا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Venezuela Amateur",
+      "slug": "venezuela-amateur",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1867,
+      "flag": "venezuela",
+      "alpha2": "VE",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "فنزويلا هواة"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Vietnam",
+      "slug": "vietnam",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 366,
+      "flag": "vietnam",
+      "alpha2": "VN",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "فيتنام"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Wales",
+      "slug": "wales",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 131,
+      "flag": "wales",
+      "alpha2": "WA",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "ويلز"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Zambia",
+      "slug": "zambia",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1158,
+      "flag": "zambia",
+      "alpha2": "ZM",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "زامبيا"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Zimbabwe",
+      "slug": "zimbabwe",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1160,
+      "flag": "zimbabwe",
+      "alpha2": "ZW",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "زيمبابوي"
+        },
+        "shortNameTranslation": {}
+      }
+    },
+    {
+      "name": "Burkina Faso",
+      "slug": "burkina-faso",
+      "sport": {
+        "name": "Football",
+        "slug": "football",
+        "id": 1
+      },
+      "priority": 0,
+      "id": 1092,
+      "flag": "burkina-faso",
+      "alpha2": "BF",
+      "fieldTranslations": {
+        "nameTranslation": {
+          "ar": "بوركينا فاسو"
+        },
+        "shortNameTranslation": {}
+      }
+    }
+  ],
+  "tournaments": [],
+  "country_summary": {
+    "England": {
+      "id": 1,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Spain": {
+      "id": 32,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Germany": {
+      "id": 30,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Italy": {
+      "id": 31,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "France": {
+      "id": 7,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Afghanistan": {
+      "id": 1084,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Albania": {
+      "id": 257,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Algeria": {
+      "id": 304,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "American Samoa": {
+      "id": 1787,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Andorra": {
+      "id": 376,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Angola": {
+      "id": 500,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Anguilla": {
+      "id": 1595,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Antigua and Barbuda": {
+      "id": 1085,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Argentina": {
+      "id": 48,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Argentina Amateur": {
+      "id": 1783,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Armenia": {
+      "id": 296,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Armenia Amateur": {
+      "id": 1828,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Aruba": {
+      "id": 1086,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Australia": {
+      "id": 34,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Australia Amateur": {
+      "id": 1876,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Austria": {
+      "id": 17,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Austria Amateur": {
+      "id": 97,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Azerbaijan": {
+      "id": 297,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Bahamas": {
+      "id": 1087,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Bahrain": {
+      "id": 351,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Bangladesh": {
+      "id": 1088,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Barbados": {
+      "id": 1089,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Belarus": {
+      "id": 91,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Belgium": {
+      "id": 33,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Belgium Amateur": {
+      "id": 1620,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Belize": {
+      "id": 1090,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Benin": {
+      "id": 1485,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Bermuda": {
+      "id": 1091,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Bhutan": {
+      "id": 1556,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Bolivia": {
+      "id": 379,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Bosnia & Herzegovina": {
+      "id": 158,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Bosnia & Herzegovina Amateur": {
+      "id": 1582,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Botswana": {
+      "id": 1020,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Brazil": {
+      "id": 13,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Brazil Amateur": {
+      "id": 1694,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "British Virgin Islands": {
+      "id": 1711,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Brunei": {
+      "id": 1617,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Bulgaria": {
+      "id": 78,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Bulgaria Amateur": {
+      "id": 1590,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Burundi": {
+      "id": 1093,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Cambodia": {
+      "id": 1094,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Cameroon": {
+      "id": 391,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Canada": {
+      "id": 388,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Cape Verde": {
+      "id": 1685,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Cayman Islands": {
+      "id": 1095,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Chad": {
+      "id": 1096,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Chile": {
+      "id": 49,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Chile Amateur": {
+      "id": 1687,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "China": {
+      "id": 99,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Chinese Taipei": {
+      "id": 1097,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Colombia": {
+      "id": 274,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Comoros": {
+      "id": 1098,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Congo Republic": {
+      "id": 1137,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Cook Islands": {
+      "id": 1795,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Costa Rica": {
+      "id": 289,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Croatia": {
+      "id": 14,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Croatia Amateur": {
+      "id": 1578,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Curacao": {
+      "id": 1099,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Cyprus": {
+      "id": 102,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Czech Republic": {
+      "id": 18,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Czechia Amateur": {
+      "id": 1816,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Côte d'Ivoire": {
+      "id": 390,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "DR Congo": {
+      "id": 1101,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Denmark": {
+      "id": 8,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Denmark Amateur": {
+      "id": 95,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Dominica": {
+      "id": 1522,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Dominican Republic": {
+      "id": 1457,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Ecuador": {
+      "id": 165,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Ecuador Amateur": {
+      "id": 1811,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Egypt": {
+      "id": 305,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "El Salvador": {
+      "id": 367,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "England Amateur": {
+      "id": 252,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Estonia": {
+      "id": 92,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Eswatini": {
+      "id": 1148,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Ethiopia": {
+      "id": 1102,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Faroe Islands": {
+      "id": 201,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Fiji": {
+      "id": 1103,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Finland": {
+      "id": 19,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "France Amateur": {
+      "id": 1626,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "French Guiana": {
+      "id": 1596,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Gabon": {
+      "id": 1104,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Gambia": {
+      "id": 1105,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Georgia": {
+      "id": 270,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Germany Amateur": {
+      "id": 122,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Ghana": {
+      "id": 542,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Gibraltar": {
+      "id": 938,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Greece": {
+      "id": 67,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Greece Amateur": {
+      "id": 1625,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Greenland": {
+      "id": 1807,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Grenada": {
+      "id": 1612,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Guadeloupe": {
+      "id": 1794,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Guam": {
+      "id": 1106,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Guatemala": {
+      "id": 365,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Guinea": {
+      "id": 1107,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Honduras": {
+      "id": 437,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Hong Kong": {
+      "id": 339,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Hungary": {
+      "id": 11,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Hungary Amateur": {
+      "id": 1594,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Iceland": {
+      "id": 10,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Africa": {
+      "id": 1466,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Asia": {
+      "id": 1467,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Europe": {
+      "id": 1465,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "North & Central America": {
+      "id": 1469,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "South America": {
+      "id": 1470,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Oceania": {
+      "id": 1471,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "India": {
+      "id": 352,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "India Amateur": {
+      "id": 1598,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Indonesia": {
+      "id": 368,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "World": {
+      "id": 1468,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Iran": {
+      "id": 301,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Iraq": {
+      "id": 1111,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Colombia Amateur": {
+      "id": 1919,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Ireland": {
+      "id": 51,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Israel": {
+      "id": 66,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Italy Amateur": {
+      "id": 1600,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Jamaica": {
+      "id": 502,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Japan": {
+      "id": 52,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Japan Amateur": {
+      "id": 1632,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Jordan": {
+      "id": 329,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Kazakhstan": {
+      "id": 278,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Kenya": {
+      "id": 805,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Kosovo": {
+      "id": 1112,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Kuwait": {
+      "id": 331,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Kuwait Amateur": {
+      "id": 1883,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Kyrgyzstan": {
+      "id": 1113,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Laos": {
+      "id": 1114,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Latvia": {
+      "id": 163,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Lebanon": {
+      "id": 428,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Lesotho": {
+      "id": 1115,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Liberia": {
+      "id": 1116,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Libya": {
+      "id": 1117,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Liechtenstein": {
+      "id": 512,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Lithuania": {
+      "id": 160,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Lithuania Amateur": {
+      "id": 1872,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Luxembourg": {
+      "id": 197,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Macao": {
+      "id": 1118,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Madagascar": {
+      "id": 1119,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Malaysia": {
+      "id": 85,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Malta": {
+      "id": 134,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Martinique": {
+      "id": 1635,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Mauritania": {
+      "id": 1123,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Mauritius": {
+      "id": 1124,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Mayotte": {
+      "id": 1799,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Mexico": {
+      "id": 12,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Mexico Amateur": {
+      "id": 1704,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Moldova": {
+      "id": 279,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Mongolia": {
+      "id": 1459,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Montenegro": {
+      "id": 386,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Montenegro Amateur": {
+      "id": 1631,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Morocco": {
+      "id": 303,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Morocco Amateur": {
+      "id": 1641,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Mozambique": {
+      "id": 1125,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Myanmar": {
+      "id": 1126,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Namibia": {
+      "id": 1127,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Nepal": {
+      "id": 1128,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Netherlands": {
+      "id": 35,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Netherlands Amateur": {
+      "id": 1587,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "New Caledonia": {
+      "id": 1129,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "New Zealand": {
+      "id": 148,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Nicaragua": {
+      "id": 1130,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Nigeria": {
+      "id": 1132,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "North Macedonia": {
+      "id": 159,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Northern Ireland": {
+      "id": 130,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Northern Mariana Islands": {
+      "id": 1819,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Norway": {
+      "id": 5,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Norway Amateur": {
+      "id": 94,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Oman": {
+      "id": 415,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Pakistan": {
+      "id": 755,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Palestine": {
+      "id": 1134,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Panama": {
+      "id": 526,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Papua New Guinea": {
+      "id": 1135,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Paraguay": {
+      "id": 280,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Peru": {
+      "id": 20,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Philippines": {
+      "id": 847,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Poland": {
+      "id": 47,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Poland Amateur": {
+      "id": 1621,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Portugal": {
+      "id": 44,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Portugal Amateur": {
+      "id": 1583,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Puerto Rico": {
+      "id": 1136,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Qatar": {
+      "id": 353,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Romania": {
+      "id": 77,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Romania Amateur": {
+      "id": 1599,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Russia": {
+      "id": 21,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Russia Amateur": {
+      "id": 1615,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Rwanda": {
+      "id": 1021,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Saint Kitts and Nevis": {
+      "id": 1493,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Saint Martin": {
+      "id": 1865,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Saint Vincent and the Grenadines": {
+      "id": 1709,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Samoa": {
+      "id": 1138,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "San Marino": {
+      "id": 387,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Sao Tome and Principe": {
+      "id": 1139,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Saudi Arabia": {
+      "id": 310,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Scotland": {
+      "id": 22,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Scotland Amateur": {
+      "id": 1697,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Senegal": {
+      "id": 886,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Serbia": {
+      "id": 152,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Serbia Amateur": {
+      "id": 1579,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Seychelles": {
+      "id": 1140,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Sierra Leone": {
+      "id": 1141,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Singapore": {
+      "id": 45,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Sint Maarten": {
+      "id": 1797,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Slovakia": {
+      "id": 23,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Slovenia": {
+      "id": 24,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Slovenia Amateur": {
+      "id": 1623,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Solomon Islands": {
+      "id": 1142,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Somalia": {
+      "id": 1143,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "South Africa": {
+      "id": 322,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "South Korea": {
+      "id": 291,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "South Sudan": {
+      "id": 1144,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Spain Amateur": {
+      "id": 421,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Suriname": {
+      "id": 1147,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Sweden": {
+      "id": 9,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Sweden Amateur": {
+      "id": 155,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Switzerland": {
+      "id": 25,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Switzerland Amateur": {
+      "id": 1693,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Syria": {
+      "id": 380,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Tahiti": {
+      "id": 1149,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Tajikistan": {
+      "id": 1150,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Tanzania": {
+      "id": 1151,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Thailand": {
+      "id": 485,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Timor Leste": {
+      "id": 1628,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Tonga": {
+      "id": 1815,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Trinidad and Tobago": {
+      "id": 1153,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Tunisia": {
+      "id": 378,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Turkey": {
+      "id": 46,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Turkey Amateur": {
+      "id": 254,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Turkmenistan": {
+      "id": 1154,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Turks and Caicos Islands": {
+      "id": 1793,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "US Virgin Islands": {
+      "id": 1804,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "USA": {
+      "id": 26,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "USA Amateur": {
+      "id": 1597,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Uganda": {
+      "id": 1022,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Ukraine": {
+      "id": 86,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "United Arab Emirates": {
+      "id": 299,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Uruguay": {
+      "id": 57,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Uruguay Amateur": {
+      "id": 1786,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Uzbekistan": {
+      "id": 385,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Vanuatu": {
+      "id": 1155,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Venezuela": {
+      "id": 281,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Venezuela Amateur": {
+      "id": 1867,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Vietnam": {
+      "id": 366,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Wales": {
+      "id": 131,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Zambia": {
+      "id": 1158,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Zimbabwe": {
+      "id": 1160,
+      "tournament_count": 0,
+      "tournaments": []
+    },
+    "Burkina Faso": {
+      "id": 1092,
+      "tournament_count": 0,
+      "tournaments": []
+    }
+  },
+  "summary": {
+    "top_countries_by_tournaments": [
+      [
+        "England",
+        {
+          "id": 1,
+          "tournament_count": 0,
+          "tournaments": []
+        }
+      ],
+      [
+        "Spain",
+        {
+          "id": 32,
+          "tournament_count": 0,
+          "tournaments": []
+        }
+      ],
+      [
+        "Germany",
+        {
+          "id": 30,
+          "tournament_count": 0,
+          "tournaments": []
+        }
+      ],
+      [
+        "Italy",
+        {
+          "id": 31,
+          "tournament_count": 0,
+          "tournaments": []
+        }
+      ],
+      [
+        "France",
+        {
+          "id": 7,
+          "tournament_count": 0,
+          "tournaments": []
+        }
+      ],
+      [
+        "Afghanistan",
+        {
+          "id": 1084,
+          "tournament_count": 0,
+          "tournaments": []
+        }
+      ],
+      [
+        "Albania",
+        {
+          "id": 257,
+          "tournament_count": 0,
+          "tournaments": []
+        }
+      ],
+      [
+        "Algeria",
+        {
+          "id": 304,
+          "tournament_count": 0,
+          "tournaments": []
+        }
+      ],
+      [
+        "American Samoa",
+        {
+          "id": 1787,
+          "tournament_count": 0,
+          "tournaments": []
+        }
+      ],
+      [
+        "Andorra",
+        {
+          "id": 376,
+          "tournament_count": 0,
+          "tournaments": []
+        }
+      ]
+    ]
+  }
+}

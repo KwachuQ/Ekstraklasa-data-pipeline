@@ -1,0 +1,32 @@
+FROM python:3.11-slim
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Python packages for ETL
+RUN pip install --no-cache-dir \
+    numpy==1.24.3 \
+    pandas==2.0.3 \
+    psycopg2-binary==2.9.7 \
+    minio==7.2.16 \
+    requests==2.31.0 \
+    python-dotenv==1.0.0 \
+    sqlalchemy==2.0.0 \
+    tenacity==8.2.3 \
+    httpx==0.25.0 \
+    pydantic==2.5.0
+
+# Create ETL directories
+RUN mkdir -p /opt/etl/logs /opt/etl/data /opt/etl/scripts
+
+# Create ETL user
+RUN useradd -m -s /bin/bash etl_user
+RUN chown -R etl_user:etl_user /opt/etl
+
+USER etl_user
+
+WORKDIR /opt/etl
+
+CMD ["python", "smoke_test.py"]

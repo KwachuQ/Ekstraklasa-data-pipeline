@@ -1,0 +1,882 @@
+{
+  "generated_at": "2025-09-10 19:57:45.004409",
+  "total_leagues": 38,
+  "leagues_by_country": {
+    "England": [
+      {
+        "country": "England",
+        "country_id": 1,
+        "division": "1st Division",
+        "league_name": "Premier League",
+        "league_id": 17,
+        "slug": "premier-league",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Premier League"
+      },
+      {
+        "country": "England",
+        "country_id": 1,
+        "division": "2nd Division",
+        "league_name": "Championship",
+        "league_id": 18,
+        "slug": "championship",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Championship"
+      }
+    ],
+    "Spain": [
+      {
+        "country": "Spain",
+        "country_id": 32,
+        "division": "1st Division",
+        "league_name": "LaLiga",
+        "league_id": 8,
+        "slug": "laliga",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "LaLiga"
+      },
+      {
+        "country": "Spain",
+        "country_id": 32,
+        "division": "2nd Division",
+        "league_name": "LaLiga 2",
+        "league_id": 54,
+        "slug": "laliga-2",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "LaLiga 2"
+      }
+    ],
+    "Germany": [
+      {
+        "country": "Germany",
+        "country_id": 30,
+        "division": "1st Division",
+        "league_name": "Bundesliga",
+        "league_id": 35,
+        "slug": "bundesliga",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Bundesliga"
+      },
+      {
+        "country": "Germany",
+        "country_id": 30,
+        "division": "2nd Division",
+        "league_name": "2. Bundesliga",
+        "league_id": 44,
+        "slug": "2-bundesliga",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "2. Bundesliga"
+      }
+    ],
+    "Italy": [
+      {
+        "country": "Italy",
+        "country_id": 31,
+        "division": "1st Division",
+        "league_name": "Serie A",
+        "league_id": 23,
+        "slug": "serie-a",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Serie A"
+      },
+      {
+        "country": "Italy",
+        "country_id": 31,
+        "division": "2nd Division",
+        "league_name": "Serie B",
+        "league_id": 53,
+        "slug": "serie-b",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Serie B"
+      }
+    ],
+    "France": [
+      {
+        "country": "France",
+        "country_id": 7,
+        "division": "1st Division",
+        "league_name": "Ligue 1",
+        "league_id": 34,
+        "slug": "ligue-1",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Ligue 1"
+      },
+      {
+        "country": "France",
+        "country_id": 7,
+        "division": "2nd Division",
+        "league_name": "Ligue 2",
+        "league_id": 182,
+        "slug": "ligue-2",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Ligue 2"
+      }
+    ],
+    "Portugal": [
+      {
+        "country": "Portugal",
+        "country_id": 44,
+        "division": "1st Division",
+        "league_name": "Liga Portugal Betclic",
+        "league_id": 238,
+        "slug": "liga-portugal-betclic",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Liga Portugal Betclic"
+      },
+      {
+        "country": "Portugal",
+        "country_id": 44,
+        "division": "2nd Division",
+        "league_name": "Liga Portugal 2",
+        "league_id": 239,
+        "slug": "liga-portugal-2",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Liga Portugal 2"
+      }
+    ],
+    "Poland": [
+      {
+        "country": "Poland",
+        "country_id": 47,
+        "division": "1st Division",
+        "league_name": "Ekstraklasa",
+        "league_id": 202,
+        "slug": "ekstraklasa",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Ekstraklasa"
+      },
+      {
+        "country": "Poland",
+        "country_id": 47,
+        "division": "2nd Division",
+        "league_name": "Betclic 1. Liga",
+        "league_id": 229,
+        "slug": "i-liga",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Betclic 1. Liga"
+      }
+    ],
+    "Norway": [
+      {
+        "country": "Norway",
+        "country_id": 5,
+        "division": "1st Division",
+        "league_name": "Eliteserien",
+        "league_id": 20,
+        "slug": "eliteserien",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Eliteserien"
+      },
+      {
+        "country": "Norway",
+        "country_id": 5,
+        "division": "2nd Division",
+        "league_name": "Norwegian 1st Division",
+        "league_id": 22,
+        "slug": "1st-division",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Norwegian 1st Division"
+      }
+    ],
+    "Sweden": [
+      {
+        "country": "Sweden",
+        "country_id": 9,
+        "division": "1st Division",
+        "league_name": "Allsvenskan",
+        "league_id": 40,
+        "slug": "allsvenskan",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Allsvenskan"
+      },
+      {
+        "country": "Sweden",
+        "country_id": 9,
+        "division": "2nd Division",
+        "league_name": "Superettan",
+        "league_id": 46,
+        "slug": "superettan",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Superettan"
+      }
+    ],
+    "Denmark": [
+      {
+        "country": "Denmark",
+        "country_id": 8,
+        "division": "1st Division",
+        "league_name": "Danish Superliga",
+        "league_id": 39,
+        "slug": "superliga",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Danish Superliga"
+      },
+      {
+        "country": "Denmark",
+        "country_id": 8,
+        "division": "2nd Division",
+        "league_name": "Betinia Liga",
+        "league_id": 47,
+        "slug": "1st-division",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Betinia Liga"
+      }
+    ],
+    "Austria": [
+      {
+        "country": "Austria",
+        "country_id": 17,
+        "division": "1st Division",
+        "league_name": "Austrian Bundesliga",
+        "league_id": 45,
+        "slug": "bundesliga",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Austrian Bundesliga"
+      },
+      {
+        "country": "Austria",
+        "country_id": 17,
+        "division": "2nd Division",
+        "league_name": "ÖFB Cup",
+        "league_id": 445,
+        "slug": "ofb-cup",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "ÖFB Cup"
+      }
+    ],
+    "Czech Republic": [
+      {
+        "country": "Czech Republic",
+        "country_id": 18,
+        "division": "1st Division",
+        "league_name": "Czech First League",
+        "league_id": 172,
+        "slug": "1-liga",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Czech First League"
+      },
+      {
+        "country": "Czech Republic",
+        "country_id": 18,
+        "division": "2nd Division",
+        "league_name": "FNL",
+        "league_id": 205,
+        "slug": "fnl",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "FNL"
+      }
+    ],
+    "Netherlands": [
+      {
+        "country": "Netherlands",
+        "country_id": 35,
+        "division": "1st Division",
+        "league_name": "VriendenLoterij Eredivisie",
+        "league_id": 37,
+        "slug": "eredivisie",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "VriendenLoterij Eredivisie"
+      },
+      {
+        "country": "Netherlands",
+        "country_id": 35,
+        "division": "2nd Division",
+        "league_name": "Eerste Divisie",
+        "league_id": 131,
+        "slug": "eerste-divisie",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Eerste Divisie"
+      }
+    ],
+    "Belgium": [
+      {
+        "country": "Belgium",
+        "country_id": 33,
+        "division": "1st Division",
+        "league_name": "Pro League",
+        "league_id": 38,
+        "slug": "pro-league",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Pro League"
+      },
+      {
+        "country": "Belgium",
+        "country_id": 33,
+        "division": "2nd Division",
+        "league_name": "Challenger Pro League",
+        "league_id": 9,
+        "slug": "challenger-pro-league",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Challenger Pro League"
+      }
+    ],
+    "Turkey": [
+      {
+        "country": "Turkey",
+        "country_id": 46,
+        "division": "1st Division",
+        "league_name": "Trendyol Süper Lig",
+        "league_id": 52,
+        "slug": "trendyol-super-lig",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Trendyol Süper Lig"
+      },
+      {
+        "country": "Turkey",
+        "country_id": 46,
+        "division": "2nd Division",
+        "league_name": "Trendyol 1.Lig",
+        "league_id": 98,
+        "slug": "trendyol-1lig",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Trendyol 1.Lig"
+      }
+    ],
+    "Brazil": [
+      {
+        "country": "Brazil",
+        "country_id": 13,
+        "division": "1st Division",
+        "league_name": "Brasileirão Betano",
+        "league_id": 325,
+        "slug": "brasileirao-serie-a",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Brasileirão Betano"
+      },
+      {
+        "country": "Brazil",
+        "country_id": 13,
+        "division": "2nd Division",
+        "league_name": "Brasileirão Série B",
+        "league_id": 390,
+        "slug": "brasileirao-serie-b",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Brasileirão Série B"
+      }
+    ],
+    "Argentina": [
+      {
+        "country": "Argentina",
+        "country_id": 48,
+        "division": "1st Division",
+        "league_name": "Liga Profesional de Fútbol",
+        "league_id": 155,
+        "slug": "liga-profesional-de-futbol",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Liga Profesional de Fútbol"
+      },
+      {
+        "country": "Argentina",
+        "country_id": 48,
+        "division": "2nd Division",
+        "league_name": "Copa de la Liga Profesional",
+        "league_id": 13475,
+        "slug": "copa-de-la-liga-profesional",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Copa de la Liga Profesional"
+      }
+    ],
+    "Switzerland": [
+      {
+        "country": "Switzerland",
+        "country_id": 25,
+        "division": "1st Division",
+        "league_name": "Swiss Super League",
+        "league_id": 215,
+        "slug": "super-league",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Swiss Super League"
+      },
+      {
+        "country": "Switzerland",
+        "country_id": 25,
+        "division": "2nd Division",
+        "league_name": "Challenge League",
+        "league_id": 216,
+        "slug": "challenge-league",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Challenge League"
+      }
+    ],
+    "Greece": [
+      {
+        "country": "Greece",
+        "country_id": 67,
+        "division": "1st Division",
+        "league_name": "Stoiximan Super League",
+        "league_id": 185,
+        "slug": "stoiximan-super-league",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Stoiximan Super League"
+      },
+      {
+        "country": "Greece",
+        "country_id": 67,
+        "division": "2nd Division",
+        "league_name": "Super League 2",
+        "league_id": 186,
+        "slug": "super-league-2",
+        "has_standings_groups": false,
+        "has_rounds": false,
+        "display_name": "Super League 2"
+      }
+    ]
+  },
+  "all_leagues": [
+    {
+      "country": "England",
+      "country_id": 1,
+      "division": "1st Division",
+      "league_name": "Premier League",
+      "league_id": 17,
+      "slug": "premier-league",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Premier League"
+    },
+    {
+      "country": "England",
+      "country_id": 1,
+      "division": "2nd Division",
+      "league_name": "Championship",
+      "league_id": 18,
+      "slug": "championship",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Championship"
+    },
+    {
+      "country": "Spain",
+      "country_id": 32,
+      "division": "1st Division",
+      "league_name": "LaLiga",
+      "league_id": 8,
+      "slug": "laliga",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "LaLiga"
+    },
+    {
+      "country": "Spain",
+      "country_id": 32,
+      "division": "2nd Division",
+      "league_name": "LaLiga 2",
+      "league_id": 54,
+      "slug": "laliga-2",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "LaLiga 2"
+    },
+    {
+      "country": "Germany",
+      "country_id": 30,
+      "division": "1st Division",
+      "league_name": "Bundesliga",
+      "league_id": 35,
+      "slug": "bundesliga",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Bundesliga"
+    },
+    {
+      "country": "Germany",
+      "country_id": 30,
+      "division": "2nd Division",
+      "league_name": "2. Bundesliga",
+      "league_id": 44,
+      "slug": "2-bundesliga",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "2. Bundesliga"
+    },
+    {
+      "country": "Italy",
+      "country_id": 31,
+      "division": "1st Division",
+      "league_name": "Serie A",
+      "league_id": 23,
+      "slug": "serie-a",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Serie A"
+    },
+    {
+      "country": "Italy",
+      "country_id": 31,
+      "division": "2nd Division",
+      "league_name": "Serie B",
+      "league_id": 53,
+      "slug": "serie-b",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Serie B"
+    },
+    {
+      "country": "France",
+      "country_id": 7,
+      "division": "1st Division",
+      "league_name": "Ligue 1",
+      "league_id": 34,
+      "slug": "ligue-1",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Ligue 1"
+    },
+    {
+      "country": "France",
+      "country_id": 7,
+      "division": "2nd Division",
+      "league_name": "Ligue 2",
+      "league_id": 182,
+      "slug": "ligue-2",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Ligue 2"
+    },
+    {
+      "country": "Portugal",
+      "country_id": 44,
+      "division": "1st Division",
+      "league_name": "Liga Portugal Betclic",
+      "league_id": 238,
+      "slug": "liga-portugal-betclic",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Liga Portugal Betclic"
+    },
+    {
+      "country": "Portugal",
+      "country_id": 44,
+      "division": "2nd Division",
+      "league_name": "Liga Portugal 2",
+      "league_id": 239,
+      "slug": "liga-portugal-2",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Liga Portugal 2"
+    },
+    {
+      "country": "Poland",
+      "country_id": 47,
+      "division": "1st Division",
+      "league_name": "Ekstraklasa",
+      "league_id": 202,
+      "slug": "ekstraklasa",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Ekstraklasa"
+    },
+    {
+      "country": "Poland",
+      "country_id": 47,
+      "division": "2nd Division",
+      "league_name": "Betclic 1. Liga",
+      "league_id": 229,
+      "slug": "i-liga",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Betclic 1. Liga"
+    },
+    {
+      "country": "Norway",
+      "country_id": 5,
+      "division": "1st Division",
+      "league_name": "Eliteserien",
+      "league_id": 20,
+      "slug": "eliteserien",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Eliteserien"
+    },
+    {
+      "country": "Norway",
+      "country_id": 5,
+      "division": "2nd Division",
+      "league_name": "Norwegian 1st Division",
+      "league_id": 22,
+      "slug": "1st-division",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Norwegian 1st Division"
+    },
+    {
+      "country": "Sweden",
+      "country_id": 9,
+      "division": "1st Division",
+      "league_name": "Allsvenskan",
+      "league_id": 40,
+      "slug": "allsvenskan",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Allsvenskan"
+    },
+    {
+      "country": "Sweden",
+      "country_id": 9,
+      "division": "2nd Division",
+      "league_name": "Superettan",
+      "league_id": 46,
+      "slug": "superettan",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Superettan"
+    },
+    {
+      "country": "Denmark",
+      "country_id": 8,
+      "division": "1st Division",
+      "league_name": "Danish Superliga",
+      "league_id": 39,
+      "slug": "superliga",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Danish Superliga"
+    },
+    {
+      "country": "Denmark",
+      "country_id": 8,
+      "division": "2nd Division",
+      "league_name": "Betinia Liga",
+      "league_id": 47,
+      "slug": "1st-division",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Betinia Liga"
+    },
+    {
+      "country": "Austria",
+      "country_id": 17,
+      "division": "1st Division",
+      "league_name": "Austrian Bundesliga",
+      "league_id": 45,
+      "slug": "bundesliga",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Austrian Bundesliga"
+    },
+    {
+      "country": "Austria",
+      "country_id": 17,
+      "division": "2nd Division",
+      "league_name": "ÖFB Cup",
+      "league_id": 445,
+      "slug": "ofb-cup",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "ÖFB Cup"
+    },
+    {
+      "country": "Czech Republic",
+      "country_id": 18,
+      "division": "1st Division",
+      "league_name": "Czech First League",
+      "league_id": 172,
+      "slug": "1-liga",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Czech First League"
+    },
+    {
+      "country": "Czech Republic",
+      "country_id": 18,
+      "division": "2nd Division",
+      "league_name": "FNL",
+      "league_id": 205,
+      "slug": "fnl",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "FNL"
+    },
+    {
+      "country": "Netherlands",
+      "country_id": 35,
+      "division": "1st Division",
+      "league_name": "VriendenLoterij Eredivisie",
+      "league_id": 37,
+      "slug": "eredivisie",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "VriendenLoterij Eredivisie"
+    },
+    {
+      "country": "Netherlands",
+      "country_id": 35,
+      "division": "2nd Division",
+      "league_name": "Eerste Divisie",
+      "league_id": 131,
+      "slug": "eerste-divisie",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Eerste Divisie"
+    },
+    {
+      "country": "Belgium",
+      "country_id": 33,
+      "division": "1st Division",
+      "league_name": "Pro League",
+      "league_id": 38,
+      "slug": "pro-league",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Pro League"
+    },
+    {
+      "country": "Belgium",
+      "country_id": 33,
+      "division": "2nd Division",
+      "league_name": "Challenger Pro League",
+      "league_id": 9,
+      "slug": "challenger-pro-league",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Challenger Pro League"
+    },
+    {
+      "country": "Turkey",
+      "country_id": 46,
+      "division": "1st Division",
+      "league_name": "Trendyol Süper Lig",
+      "league_id": 52,
+      "slug": "trendyol-super-lig",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Trendyol Süper Lig"
+    },
+    {
+      "country": "Turkey",
+      "country_id": 46,
+      "division": "2nd Division",
+      "league_name": "Trendyol 1.Lig",
+      "league_id": 98,
+      "slug": "trendyol-1lig",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Trendyol 1.Lig"
+    },
+    {
+      "country": "Brazil",
+      "country_id": 13,
+      "division": "1st Division",
+      "league_name": "Brasileirão Betano",
+      "league_id": 325,
+      "slug": "brasileirao-serie-a",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Brasileirão Betano"
+    },
+    {
+      "country": "Brazil",
+      "country_id": 13,
+      "division": "2nd Division",
+      "league_name": "Brasileirão Série B",
+      "league_id": 390,
+      "slug": "brasileirao-serie-b",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Brasileirão Série B"
+    },
+    {
+      "country": "Argentina",
+      "country_id": 48,
+      "division": "1st Division",
+      "league_name": "Liga Profesional de Fútbol",
+      "league_id": 155,
+      "slug": "liga-profesional-de-futbol",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Liga Profesional de Fútbol"
+    },
+    {
+      "country": "Argentina",
+      "country_id": 48,
+      "division": "2nd Division",
+      "league_name": "Copa de la Liga Profesional",
+      "league_id": 13475,
+      "slug": "copa-de-la-liga-profesional",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Copa de la Liga Profesional"
+    },
+    {
+      "country": "Switzerland",
+      "country_id": 25,
+      "division": "1st Division",
+      "league_name": "Swiss Super League",
+      "league_id": 215,
+      "slug": "super-league",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Swiss Super League"
+    },
+    {
+      "country": "Switzerland",
+      "country_id": 25,
+      "division": "2nd Division",
+      "league_name": "Challenge League",
+      "league_id": 216,
+      "slug": "challenge-league",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Challenge League"
+    },
+    {
+      "country": "Greece",
+      "country_id": 67,
+      "division": "1st Division",
+      "league_name": "Stoiximan Super League",
+      "league_id": 185,
+      "slug": "stoiximan-super-league",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Stoiximan Super League"
+    },
+    {
+      "country": "Greece",
+      "country_id": 67,
+      "division": "2nd Division",
+      "league_name": "Super League 2",
+      "league_id": 186,
+      "slug": "super-league-2",
+      "has_standings_groups": false,
+      "has_rounds": false,
+      "display_name": "Super League 2"
+    }
+  ]
+}

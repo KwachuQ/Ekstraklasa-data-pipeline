@@ -1,0 +1,27 @@
+default:
+  outputs:
+    dev:
+      type: postgres
+      host: postgres
+      user: airflow
+      password: airflow
+      port: 5432
+      dbname: dwh
+      schema: bronze, silver, gold
+      threads: 4
+      keepalives_idle: 0
+      search_path: "bronze,silver,gold"
+    
+    prod:
+      type: postgres
+      host: postgres
+      user: airflow
+      password: airflow
+      port: 5432
+      dbname: dwh
+      schema: gold
+      threads: 4
+      keepalives_idle: 0
+      search_path: "bronze,silver,gold"
+      
+  target: dev
