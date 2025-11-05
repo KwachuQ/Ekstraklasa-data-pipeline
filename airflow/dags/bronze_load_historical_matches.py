@@ -280,7 +280,7 @@ default_args = {
 }
 
 dag = DAG(
-    'load_historical_ekstraklasa_matches',
+    'bronze_load_historical_matches',
     default_args=default_args,
     description='Load all historical Ekstraklasa matches from MinIO to PostgreSQL',
     schedule=None,

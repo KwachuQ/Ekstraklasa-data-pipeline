@@ -365,7 +365,7 @@ default_args = {
 }
 
 dag = DAG(
-    'fetch_today_statistics',
+    '03_bronze_extract_incremental_stats',
     default_args=default_args,
     description='Fetch match statistics for matches loaded today to bronze.raw_matches',
     schedule=None,  # Manual trigger - run after bronze_loader_recent_matches

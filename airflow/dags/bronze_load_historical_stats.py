@@ -316,7 +316,7 @@ default_args = {
 }
 
 with DAG(
-    dag_id="load_historical_ekstraklasa_statistics",
+    dag_id="bronze_load_historical_stats",
     default_args=default_args,
     description="Load valid match statistics from MinIO to PostgreSQL bronze layer",
     schedule=None,

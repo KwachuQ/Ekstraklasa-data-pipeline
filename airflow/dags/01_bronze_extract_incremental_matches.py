@@ -112,7 +112,7 @@ asyncio.run(run())
 
 # DAG
 with DAG(
-    'ekstraklasa_update',
+    '01_bronze_extract_incremental_matches',
     default_args={
         'owner': 'airflow',
         'retries': 2,
@@ -122,7 +122,7 @@ with DAG(
     schedule=None,
     start_date=datetime(2024, 1, 1),
     catchup=False,
-    tags=['ekstraklasa', 'incremental', 'daily', 'bronze']
+    tags=['01', 'ekstraklasa', 'incremental', 'bronze']
 ) as dag:
     
     get_last_info = PythonOperator(

@@ -376,7 +376,7 @@ default_args = {
 }
 
 dag = DAG(
-    'load_incremental_ekstraklasa_matches',
+    '02_bronze_load_incremental_matches',
     default_args=default_args,
     description='Incremental load of NEW Ekstraklasa matches from MinIO to PostgreSQL raw_matches',
     schedule=None,

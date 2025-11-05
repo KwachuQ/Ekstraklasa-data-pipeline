@@ -117,7 +117,7 @@ def fetch_match_statistics(**kwargs):
 
 # DAG definition
 with DAG(
-    dag_id="fetch_match_statistics",
+    dag_id="bronze_extract_historical_stats",
     start_date=datetime(2025, 1, 1),
     schedule=None,  # Manually triggered
     catchup=False,

@@ -138,7 +138,7 @@ def generate_incremental_report(**context):
     print("="*60)
 
 with DAG(
-    dag_id='silver_staging_incremental',
+    dag_id='05_silver_stage_incremental',
     default_args=default_args,
     description='Incremental update of Silver staging tables',
     schedule=None,

@@ -420,7 +420,7 @@ default_args = {
 }
 
 dag = DAG(
-    'load_incremental_ekstraklasa_statistics',
+    '04_bronze_load_incremental_stats',
     default_args=default_args,
     description='Incremental load of match statistics from MinIO to PostgreSQL raw_stats',
     schedule=None,  

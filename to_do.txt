@@ -1,1 +1,14 @@
-1. Rozwiązać problem z niezgodnością w sumowaniu goli (gold != silver) i score consistency.
+1. Kod w folderze ETL - zoptymalizować skrypty, tak by nie zepsuć DAGów.
+- przejrzeć kod i zrozumieć jakie funkcje zawiera
+- stworzyć spójny package
+- przetłumaczyć na angielski
+- ujednolicić nazewnictwo
+- sprawdzić integracje z DAGs
+
+2. Dokumentacja
+- stworzyć sensowny README
+- stworzyć wizualizację data flow
+
+3. Stworzyć spójne dashboardy do analizy danych
+- nauczyć się jak można dostostować metabase do potrzeb
+- jeśli nie da się stworzyć takich wizualizacji jak chcę - znaleźć inne rozwiązanie

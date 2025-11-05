@@ -12,7 +12,7 @@ default_args = {
 }
 
 with DAG(
-    dag_id='dbt_gold_models',
+    dag_id='07_gold_transform_dbt',
     default_args=default_args,
     description='Run all dbt models in gold layer',
     schedule=None,

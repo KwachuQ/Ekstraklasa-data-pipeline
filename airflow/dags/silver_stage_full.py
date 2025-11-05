@@ -111,7 +111,7 @@ def generate_report(**context):
     print("="*60)
 
 with DAG(
-    dag_id='bronze_to_silver_staging',
+    dag_id='silver_stage_full',
     default_args=default_args,
     description='Create staging tables in Silver layer',
     schedule=None,
