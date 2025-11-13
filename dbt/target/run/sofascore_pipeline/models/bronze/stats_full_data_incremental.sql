@@ -22,7 +22,7 @@
     
 
     merge into "dwh"."bronze"."full_stats_data" as DBT_INTERNAL_DEST
-        using "full_stats_data__dbt_tmp122831941341" as DBT_INTERNAL_SOURCE
+        using "full_stats_data__dbt_tmp095741834778" as DBT_INTERNAL_SOURCE
         on (
                     DBT_INTERNAL_SOURCE.match_id = DBT_INTERNAL_DEST.match_id
                 ) and (

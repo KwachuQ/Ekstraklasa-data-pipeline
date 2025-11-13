@@ -5,6 +5,37 @@
 - ujednolicić nazewnictwo
 - sprawdzić integracje z DAGs
 
+etl/
+├── bronze/                           # Bronze layer extraction scripts
+│   ├── __init__.py
+│   ├── client.py                     # Renamed from: sofascore_client.py
+│   ├── storage.py                    # Renamed from: storage_manager.py
+│   │
+│   ├── extractors/                   # Extract operations (match DAGs 01_ and 03_)
+│   │   ├── __init__.py
+│   │   ├── base_extractor.py        # Renamed from: sofascore_etl.py
+│   │   ├── incremental_extractor.py # Renamed from: sofascore_incremental_etl.py
+│   │   ├── statistics_extractor.py  # Renamed from: fetch_match_statistics.py
+│   │   └── ekstraklasa_extractor.py # Renamed from: ekstraklasa_config.py
+│   │
+│   └── diagnostics/                  # Data quality & completeness tools
+│       ├── __init__.py
+│       ├── season_diagnostic.py     # Renamed from: diagnose_seasons.py
+│       └── content_explorer.py      # Renamed from: explore_bronze_content.py
+│
+├── utils/                            # Utility scripts (not directly used in DAGs)
+│   ├── __init__.py
+│   ├── extract_top_leagues.py       # Discovery script
+│   └── test_ekstraklasa.py          # Test script
+│
+├── notebooks/
+│   └── sofascore_API_exploration.ipynb
+│
+├── scripts/                          # Legacy/deprecated (can be removed after migration)
+│   └── (old files)
+│
+└── logs/
+
 2. Dokumentacja
 - stworzyć sensowny README
 - stworzyć wizualizację data flow

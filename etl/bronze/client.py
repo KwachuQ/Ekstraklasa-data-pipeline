@@ -1,5 +1,5 @@
 """
-SofaScore API Client - Production-ready implementation
+SofaScore API Client
 Handles RapidAPI integration with retry logic, rate limiting, and validation
 """
 

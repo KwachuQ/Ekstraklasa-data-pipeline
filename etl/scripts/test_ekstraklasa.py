@@ -19,7 +19,7 @@ logger = logging.getLogger(__name__)
 # Ekstraklasa 2025-2026 test configuration
 EKSTRAKLASA_2025_CONFIG = {
     "tournament_id": 202,
-    "season_id": 76477,  # This may need to be updated for actual 2025-26 season
+    "season_id": 76477, 
     "category_id": 47,
     "tournament_name": "PKO BP Ekstraklasa",
     "season_name": "2025/26"

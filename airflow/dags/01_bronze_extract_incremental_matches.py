@@ -122,7 +122,7 @@ with DAG(
     schedule=None,
     start_date=datetime(2024, 1, 1),
     catchup=False,
-    tags=['01', 'ekstraklasa', 'incremental', 'bronze']
+    tags=['ekstraklasa', 'incremental', 'bronze']
 ) as dag:
     
     get_last_info = PythonOperator(

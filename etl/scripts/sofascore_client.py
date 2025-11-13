@@ -7,13 +7,14 @@ import asyncio
 import hashlib
 import json
 import logging
+import os
 import time
 from datetime import datetime, timezone
 from typing import Dict, Any, Optional, List, Union
 from urllib.parse import urljoin
 
 import httpx
-from pydantic import BaseModel, ValidationError, Field
+from pydantic import BaseModel, ValidationError as PydanticValidationError, Field
 from tenacity import (
     retry, 
     stop_after_attempt, 
@@ -34,7 +35,7 @@ class RateLimitError(SofascoreAPIError):
     """Raised when rate limit is exceeded"""
     pass
 
-class ValidationError(SofascoreAPIError):
+class SofascoreValidationError(SofascoreAPIError):
     """Raised when response validation fails"""
     pass
 
@@ -89,7 +90,9 @@ class SofascoreClient:
         rate_limit_delay: float = 1.0,
         user_agent: str = "DataPipeline/1.0"
     ):
-        self.api_key = api_key or "23326581afmsha80927a889f5d69p1c1e08jsnb6e742b99b4a"  # From notebook
+        self.api_key = api_key or os.getenv('RAPIDAPI_KEY')
+        if not self.api_key:
+            raise ValueError("RAPIDAPI_KEY must be provided via parameter or environment variable")
         self.max_retries = max_retries
         self.timeout = timeout
         self.rate_limit_delay = rate_limit_delay
@@ -194,7 +197,7 @@ class SofascoreClient:
                 for item in data:
                     try:
                         validated_items.append(schema(**item).dict())
-                    except ValidationError as e:
+                    except PydanticValidationError as e:
                         logger.warning(f"Skipping invalid item in {context}: {e}")
                         continue
                 return {"items": validated_items, "total_count": len(validated_items)}
@@ -202,8 +205,8 @@ class SofascoreClient:
                 # Validate single item
                 return schema(**data).dict()
                 
-        except ValidationError as e:
-            logger.error(f"Response validation failed for {context}: {e}")
+        except PydanticValidationError as e:
+            logger.warning(f"Skipping invalid item in {context}: {e}")
             # Return raw data with warning flag for defensive handling
             return {
                 "raw_data": data,
