@@ -1,4 +1,4 @@
-# Data Pipeline – Sofascore (Football Stats)
+# Data Pipeline – Ekstraklasa (Football Stats)
 
 End-to-end data pipeline for ingesting, modeling and serving Ekstraklasa football data from the [SofaScore API](https://rapidapi.com/apidojo/api/sofascore) using a medallion architecture (Bronze → Silver → Gold). Orchestrated with Airflow, stored in MinIO/PostgreSQL, transformed via dbt, and ready for BI (Metabase).
 
