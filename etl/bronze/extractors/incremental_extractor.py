@@ -299,7 +299,7 @@ class SofascoreIncrementalETL:
             except Exception as e:
                 self._handle_error(e, f"Error storing matches for {match_date}", results)
     
-    def extract_new_matches(
+    async def extract_new_matches(
         self,
         tournament_id: int,
         season_id: int,
@@ -351,11 +351,11 @@ class SofascoreIncrementalETL:
                     logger.info(f"Scanning page {page + 1}/{max_pages}...")
                     
                     # Fetch matches from API
-                    response = client.get_tournament_matches(
+                    response = await client.get_tournament_matches(
                         tournament_id, season_id, page
                     )
                     
-                    matches = response['data'].get('items', [])
+                    matches = response.validated_items
                     if not matches:
                         logger.info(f"No more matches at page {page + 1}")
                         break
@@ -370,7 +370,7 @@ class SofascoreIncrementalETL:
                         # Store immediately (memory efficient)
                         self._store_new_matches(
                             new_matches,
-                            response['metadata'],
+                            response.metadata,
                             tournament_id,
                             season_id,
                             results

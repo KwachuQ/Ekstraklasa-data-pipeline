@@ -219,14 +219,14 @@ class SofascoreETL:
                     logger.info(f"Fetching page {page + 1}/{max_pages}...")
                     
                     # Fetch matches from API
-                    response = client.get_tournament_matches(
+                    response = await client.get_tournament_matches(
                         tournament_id,
                         season_id,
                         page
                     )
                     
                     # Check for data
-                    matches = response['data'].get('items', [])
+                    matches = response.validated_items
                     if not matches:
                         logger.info(f"No more matches found at page {page + 1}")
                         break
@@ -235,7 +235,7 @@ class SofascoreETL:
                     matches_by_date = self._group_matches_by_date(matches)
                     self._store_matches_by_date(
                         matches_by_date=matches_by_date,
-                        metadata=response['metadata'],
+                        metadata=response.metadata,
                         tournament_id=tournament_id,
                         season_id=season_id,
                         replace_partition=replace_partition and page == 0,
@@ -300,10 +300,11 @@ class SofascoreETL:
                 # Fetch matches in batch
                 for match_id in batch_ids:
                     try:
-                        response = client.get_match_details(match_id)
+                        response = await client.get_match_details(match_id)
                         
-                        if response['data'].get('validation_status') != 'failed':
-                            batch_matches.append(response['data'])
+                        if response.is_valid:
+                            if response.validated_items:
+                                batch_matches.extend(response.validated_items)
                         else:
                             logger.warning(
                                 f"Skipping match {match_id} - validation failed"

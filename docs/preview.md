@@ -1,124 +1,137 @@
-# Data Pipeline – Sofascore (Football Stats)
+# Data Pipeline – Ekstraklasa (Football Stats)
 
-End-to-end data pipeline for ingesting, modeling and serving Ekstraklasa football data from SofaScore API using a medallion architecture (bronze → silver → gold). Orchestrated with Airflow, stored in MinIO/PostgreSQL, transformed via dbt, and ready for BI (Metabase).
+End-to-end data pipeline for ingesting, modeling and serving Ekstraklasa football data from the [SofaScore API](https://rapidapi.com/apidojo/api/sofascore) using a medallion architecture (Bronze → Silver → Gold). Orchestrated with Airflow, stored in MinIO/PostgreSQL, transformed via dbt, and ready for BI (Metabase).
 
-- Architecture: see [architecture.md](architecture.md)
-- Environment configs: [docs/ENVIRONMENT_CONFIG.md](docs/ENVIRONMENT_CONFIG.md)
-- Data flow: [docs/data_flow.txt](docs/data_flow.txt)
+## Contents
 
-## Spis treści
-- [Ogólne informacje](#ogólne-informacje)
-- [Technologie](#technologie)
-- [Instrukcja uruchomienia](#instrukcja-uruchomienia)
-- [Struktura kodu](#struktura-kodu)
-- [Przykłady użycia](#przykłady-użycia)
-- [Status projektu](#status-projektu)
-- [Licencja i autorzy](#licencja-i-autorzy)
-- [Linki do dalszej dokumentacji](#linki-do-dalszej-dokumentacji)
+- [General Info](#general-info)
+- [Tech Stack](#tech-stack)
+- [Project Architecture & Code Structure](#project-architecture-and-code-structure)
+- [Quick Start](#quick-start)
+- [Data Flows](#data-flows)
+- [Security Notes](#security-notes)
+- [License](#license)
 
-## Ogólne informacje
-- Cel: zbudowanie wiarygodnej bazy danych meczów i statystyk Ekstraklasy do analiz i predykcji (fair odds).
-- Zakres:
-  - ETL/ELT z SofaScore API do MinIO (bronze), PostgreSQL (silver), dbt (gold).
-  - Orkiestracja Airflow, kontenery Docker.
-  - Diagnostyka kompletności danych i testy jakości.
+## General Info
 
-Wymagania biznesowo-analityczne: [docs/specification.txt](docs/specification.txt), przegląd danych: [docs/data_analysis_review.md](docs/data_analysis_review.md).
+Goal: build a reliable database of Ekstraklasa matches and statistics for analytics (BI) and predictive models.
 
-## Technologie
-- Orchestracja: Apache Airflow 3.0.6 
-- Składowanie: MinIO
-- Hurtownia: PostgreSQL
-- Transformacje: dbt-core
+Scope:
+- Containerized environment (Docker & Docker Compose)
+- ELT from SofaScore API → MinIO (Bronze) → PostgreSQL (Silver) → dbt (Gold)
+- Airflow orchestration & scheduling
+
+## Tech Stack
+
+- Orchestration: Apache Airflow 3.0.6 ([docker/Dockerfile](docker/Dockerfile))
+- Storage: MinIO
+- Warehouse: PostgreSQL
+- Transform: dbt-core ([dbt/dbt_project.yml](dbt/dbt_project.yml))
 - BI: Metabase
-- Języki i biblioteki: Python 3.12, Pydantic, psycopg2, minio, requests, pytest
-- Runtime: Docker & Docker Compose
+- Runtime: Docker & Docker Compose ([docker/docker-compose.yml](docker/docker-compose.yml))
+- Languages: Python, SQL
 
-Dokładne profile środowisk: [docs/ENVIRONMENT_CONFIG.md](docs/ENVIRONMENT_CONFIG.md)
+## Project Architecture and Code Structure
 
-## Instrukcja uruchomienia
-1) Uruchom usługi
-```sh
-cd docker
-docker-compose up -d
-```
+<p align="center">
+  <img src="DE_pipeline_sofascore.drawio.png" alt="Architektura pipeline'u Ekstraklasa" width="900">
+</p>
 
-2) Inicjalizacja połączeń/bucketów (jeśli wymagane)
-- Skrypty i DAGi pomocnicze: zob. [docs/README.md](docs/README.md) (sekcja Quick Start) i [airflow/dags/backup/silver_stage_full.py](airflow/dags/backup/silver_stage_full.py)
+Bronze ETL Components:
+- API client: `etl.bronze.client.SofascoreClient` (etl/bronze/client.py)
+- Storage: `etl.bronze.storage.BronzeStorageManager` (etl/bronze/storage.py)
+- Extractors:
+  - `etl.bronze.extractors.statistics_extractor.StatisticsFetcher` (etl/bronze/extractors/statistics_extractor.py)
+  - `etl.bronze.extractors.base_extractor` (etl/bronze/extractors/base_extractor.py)
+  - `etl.bronze.extractors.incremental_extractor` (etl/bronze/extractors/incremental_extractor.py)
 
-3) Uruchom przepływ inkrementalny (manualnie z UI lub via docker exec)
-- Mecze → Bronze → raw_matches:
+Diagnostics:
+- `etl.bronze.diagnostics.season_diagnostic.EkstraklasaSeasonDiagnostic` (etl/bronze/diagnostics/season_diagnostic.py)
+- `etl/bronze/diagnostics/content_explorer.py`
+
+Other:
+- Airflow DAGs: `airflow/dags/`
+- Utility scripts (legacy/backup): `docker/backup/scripts/`
+- dbt project: `dbt/`
+
+
+## Quick Start
+
+To use SofaScore API you need an [API key](https://rapidapi.com/apidojo/api/sofascore/pricing). Update your `.env` file with credentials.
+
+1. Start services:
+   ```sh
+   cd docker
+   docker-compose up -d
+   ```
+2. Access endpoints:
+   - Airflow UI: http://localhost:8080 (user: `airflow`, pass: `airflow`)
+   - MinIO Console: http://localhost:9001 (user: `minio`, pass: `minio123`)
+   - PostgreSQL: `localhost:5432` (db: `dwh`, user: `airflow`, pass: `airflow`)
+   - Metabase: http://localhost:3000
+
+3. Initialize MinIO buckets & Airflow connections (if not already done):
+   ```sh
+   # inside airflow-webserver container (or via docker exec)
+   bash airflow/scripts/create_minio_conn.sh
+   bash airflow/scripts/create_minio_buckets.sh
+   bash airflow/scripts/create_postgres_conn.sh
+   ```
+   Scripts: [airflow/scripts/create_minio_conn.sh](airflow/scripts/create_minio_conn.sh), [airflow/scripts/create_minio_buckets.sh](airflow/scripts/create_minio_buckets.sh), [airflow/scripts/create_postgres_conn.sh](airflow/scripts/create_postgres_conn.sh)
+
+## Data Flows
+
+### a) Historical Backfill (full load – requires paid API plan)
+
+- Matches (API → Bronze → raw_matches in PostgreSQL):
+  - [airflow/dags/bronze_backfill_historical.py](airflow/dags/bronze_backfill_historical.py)
+  - [airflow/dags/bronze_load_historical_matches.py](airflow/dags/bronze_load_historical_matches.py)
+- Stats (API → Bronze → raw_stats in PostgreSQL):
+  - [airflow/dags/bronze_extract_historical_stats.py](airflow/dags/bronze_extract_historical_stats.py)
+  - [airflow/dags/bronze_load_historical_stats.py](airflow/dags/bronze_load_historical_stats.py)
+- Silver staging (full):
+  - [airflow/dags/silver_stage_full.py](airflow/dags/silver_stage_full.py)
+
+### b) Incremental Update (only new matches after last recorded date)
+
+- Matches (API → Bronze → raw_matches in PostgreSQL):
+  - [airflow/dags/01_bronze_extract_incremental_matches.py](airflow/dags/01_bronze_extract_incremental_matches.py)
   - [airflow/dags/02_bronze_load_incremental_matches.py](airflow/dags/02_bronze_load_incremental_matches.py)
-- Statystyki → Bronze → raw_stats:
-  - [airflow/dags/backup/03_bronze_extract_incremental_stats.py](airflow/dags/backup/03_bronze_extract_incremental_stats.py)
-  - [airflow/dags/backup/04_bronze_load_incremental_stats.py](airflow/dags/backup/04_bronze_load_incremental_stats.py)
-- Silver staging (inkrementalnie lub pełny):
-  - [airflow/dags/backup/05_silver_stage_incremental.py](airflow/dags/backup/05_silver_stage_incremental.py)
-  - [airflow/dags/backup/silver_stage_full.py](airflow/dags/backup/silver_stage_full.py)
+- Stats (API → Bronze → raw_stats in PostgreSQL):
+  - [airflow/dags/03_bronze_extract_incremental_stats.py](airflow/dags/03_bronze_extract_incremental_stats.py)
+  - [airflow/dags/04_bronze_load_incremental_stats.py](airflow/dags/04_bronze_load_incremental_stats.py)
+- Silver staging (incremental):
+  - [airflow/dags/05_silver_stage_incremental.py](airflow/dags/05_silver_stage_incremental.py)
 
-4) Uruchom dbt (silver → gold)
+### c) dbt (Silver → Gold)
+
+Run inside the `dbt` container:
 ```sh
-# wewnątrz kontenera dbt
 docker exec -it dbt dbt deps
 docker exec -it dbt dbt run
 docker exec -it dbt dbt test
 ```
+## Analytical layer
 
-5) Testy i health-check
-```sh
-docker exec -it etl_worker python tests/smoke_test.py
-docker exec -it etl_worker python tests/test_storage.py
-docker exec -it etl_worker python tests/health_check.py
-```
+Metabase is included for BI exploration (service defined in [docker/docker-compose.yml](docker/docker-compose.yml)).
 
-Backfill historyczny (smart + checkpoint): [airflow/dags/bronze_backfill_historical.py](airflow/dags/bronze_backfill_historical.py)
+Initial setup:
+- On first launch create admin account.
+- Add PostgreSQL database:
+  - Host: postgres
+  - Port: 5432
+  - DB name: dwh
+  - User: airflow
+  - Password: airflow
+- After running dbt ([dbt/dbt_project.yml](dbt/dbt_project.yml)) click Sync to load new tables (silver/gold schemas).
 
-## Struktura kodu
-- ETL (Bronze):
-  - Klient API: [`etl.bronze.client.SofascoreClient`](etl/bronze/client.py)
-  - Składowanie: [`etl.bronze.storage.BronzeStorageManager`](etl/bronze/storage.py)
-  - Ekstraktory:
-    - [`etl.bronze.extractors.statistics_extractor.StatisticsFetcher`](etl/bronze/extractors/statistics_extractor.py)
-    - [`etl.bronze.extractors.base_extractor`](etl/bronze/extractors/base_extractor.py)
-    - [`etl.bronze.extractors.incremental_extractor`](etl/bronze/extractors/incremental_extractor.py)
-- Diagnostyka:
-  - [`etl.bronze.diagnostics.season_diagnostic.EkstraklasaSeasonDiagnostic`](etl/bronze/diagnostics/season_diagnostic.py)
-  - [etl/bronze/diagnostics/content_explorer.py](etl/bronze/diagnostics/content_explorer.py)
-- DAGi Airflow: [airflow/dags/](airflow/dags/)
-- Skrypty pomocnicze (legacy/backup): [docker/backup/scripts/](docker/backup/scripts/)
-- dbt: [dbt/](dbt/)
 
-Pełny opis komponentów: [architecture.md](architecture.md)
+## Security Notes
 
-## Przykłady użycia
-- Pobranie statystyk dla listy match_id do MinIO (Bronze):
-```sh
-docker exec -e RAPIDAPI_KEY=$RAPIDAPI_KEY etl_worker python docker/backup/scripts/fetch_match_statistics.py
-```
-- Testowy run ekstraktora statystyk:
-```sh
-docker exec -e RAPIDAPI_KEY=$RAPIDAPI_KEY etl_worker python -c "from etl.bronze.extractors.statistics_extractor import main; main()"
-```
-- Diagnostyka sezonów:
-```sh
-docker exec etl_worker python etl/bronze/diagnostics/season_diagnostic.py
-```
+- Change default passwords before production.
+- Use environment variables / secret managers for credentials.
+- Enable HTTPS and schedule regular backups.
 
-Dodatkowe przepływy operacyjne: [docs/data_flow.txt](docs/data_flow.txt)
+## License
 
-## Status projektu
-- Stabilność: aktywny rozwój (pipeline działa w trybie inkrementalnym; backfill wspierany przez checkpoint).
-- Znane kwestie:
-  - Nierówne pokrycie historycznych statystyk, szczególnie przed 2013 r. (raporty: [docs/data_analysis_review.md](docs/data_analysis_review.md))
-  - Konsolidacja nazw i modułów w trakcie ([to_do.txt](to_do.txt))
-- Roadmap: patrz [architecture.md](architecture.md) → Roadmap/Technical Debt
-
-## Licencja i autorzy
-- Licencja: MIT (zob. [docs/README.md](docs/README.md))
-- Autorzy: Data Engineering Team
-
-## Linki do dalszej dokumentacji
-- Architektura: [architecture.md](architecture.md)
-- Konfiguracje środowisk: [docs/ENVIRONMENT_CONFIG.md](docs/ENVIRONMENT_CONFIG.md)
-- Specyfikacja biznesowa: [docs/specification.txt](docs/specification.txt)
-- Endpoints API (referencje): [docs/reference_sources/sofascore_API_endpoints_docs.txt](docs/reference_sources/sofascore_API_endpoints_docs.txt)
+MIT

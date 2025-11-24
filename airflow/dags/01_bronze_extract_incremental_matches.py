@@ -63,6 +63,7 @@ def extract_new_matches(**context) -> dict:
     command = f"""docker exec etl_worker python -c "
 import asyncio
 import json
+import sys
 from etl.bronze.extractors.incremental_extractor import SofascoreIncrementalETL
 
 async def run():
@@ -73,42 +74,67 @@ async def run():
             last_match_date='{last_date}',
             max_pages=25
         )
-    print('RESULT:' + json.dumps({{
+    
+    # Print errors to stdout for Airflow
+    if result['errors']:
+        print('ERRORS:', file=sys.stderr)
+        for error in result['errors']:
+            print(f'  - {{error}}', file=sys.stderr)
+    
+    output = {{
         'new': result['total_new_matches'],
         'saved': len(result['stored_batches']),
         'pages': result['pages_scanned'],
         'errors': len(result['errors'])
-    }}))
+    }}
+    
+    print('RESULT:' + json.dumps(output))
+    
+    # Exit with error code if extraction failed
+    if result['errors'] and result['total_new_matches'] == 0:
+        sys.exit(1)
 
 asyncio.run(run())
 " """
     
+    
     try:
         result = subprocess.run(command, shell=True, capture_output=True, text=True, timeout=600)
         
-        if result.returncode != 0:
-            print(f"Error during execution: {result.stderr}")
-            print(f"stdout: {result.stdout}")
-            return {'new': 0, 'saved': 0}
+        # Print stderr (errors) if present
+        if result.stderr:
+            print(f"STDERR:\n{result.stderr}")
         
         print(f"Output:\n{result.stdout}")
         
+        if result.returncode != 0:
+            print(f"⚠️ ETL process failed with exit code {result.returncode}")
+            raise Exception(f"ETL extraction failed: check logs above for errors")
+        
+        # Parse result
         for line in result.stdout.split('\n'):
             if line.startswith('RESULT:'):
                 matches_result = json.loads(line.replace('RESULT:', ''))
-                print(f"New matches: {matches_result['new']}, saved batches: {matches_result['saved']}")
+                print(f"✓ New matches: {matches_result['new']}, saved batches: {matches_result['saved']}")
+                
+                # Fail if there were errors
+                if matches_result['errors'] > 0:
+                    raise Exception(
+                        f"Extraction completed with {matches_result['errors']} errors. "
+                        f"Only {matches_result['new']} matches saved."
+                    )
+                
                 return matches_result
         
-        print("No RESULT: found in output")
-        return {'new': 0, 'saved': 0}
+        print("⚠️ No RESULT: found in output")
+        raise Exception("ETL did not return results")
         
     except subprocess.TimeoutExpired:
-        print(f"Timeout - process took longer than 10 minutes")
-        return {'new': 0, 'saved': 0}
+        print(f"⚠️ Timeout - process took longer than 10 minutes")
+        raise
     except Exception as e:
-        print(f"Error: {type(e).__name__}: {e}")
-        return {'new': 0, 'saved': 0}
-
+        print(f"⚠️ Error: {type(e).__name__}: {e}")
+        raise
 
 # DAG
 with DAG(
