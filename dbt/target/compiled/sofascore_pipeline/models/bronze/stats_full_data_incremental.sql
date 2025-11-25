@@ -1,12 +1,21 @@
 
 
 WITH source_data AS (
-    SELECT * FROM "dwh"."bronze"."raw_stats"
-    WHERE data IS NOT NULL
-      AND data->'statistics' IS NOT NULL
+    SELECT 
+        rs.id,
+        rs.data,
+        rs.match_id,
+        rs.tournament_id,
+        rs.file_path,
+        rs.batch_id,
+        rs.ingestion_timestamp,
+        fm.season_id
+    FROM "dwh"."bronze"."raw_stats" rs
+    LEFT JOIN "dwh"."bronze"."full_matches_data" fm ON rs.match_id = fm.match_id
+    WHERE rs.data IS NOT NULL
+      AND rs.data->'statistics' IS NOT NULL
     
-        -- Ładuj tylko statystyki dla meczów, których jeszcze nie ma w docelowej tabeli
-        AND match_id NOT IN (
+        AND rs.match_id NOT IN (
             SELECT DISTINCT match_id 
             FROM "dwh"."bronze"."full_stats_data"
         )
@@ -17,12 +26,12 @@ WITH source_data AS (
 flattened_stats AS (
     SELECT
         -- Core Match Information
-        match_id,
-        tournament_id,
-        season_id,
-        file_path,
-        batch_id,
-        ingestion_timestamp,
+        source_data.match_id,
+        source_data.tournament_id,
+        source_data.season_id,
+        source_data.file_path,
+        source_data.batch_id,
+        source_data.ingestion_timestamp,
         
         -- Statistics Period
         stat_period.value->>'period' as period,
@@ -43,10 +52,10 @@ flattened_stats AS (
         (stat_item.value->>'renderType')::INTEGER as render_type,
         
         -- Original JSON data for reference
-        data as original_data
+        source_data.data as original_data
         
     FROM source_data
-    CROSS JOIN LATERAL jsonb_array_elements(data->'statistics') as stat_period(value)
+    CROSS JOIN LATERAL jsonb_array_elements(source_data.data->'statistics'->'statistics') as stat_period(value)
     CROSS JOIN LATERAL jsonb_array_elements(stat_period.value->'groups') as stat_group(value)
     CROSS JOIN LATERAL jsonb_array_elements(stat_group.value->'statisticsItems') as stat_item(value)
 ),

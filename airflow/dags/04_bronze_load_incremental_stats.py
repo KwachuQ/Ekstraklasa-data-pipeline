@@ -65,8 +65,7 @@ def get_matches_needing_statistics(**context):
     query = f"""
         SELECT 
             match_id,
-            start_timestamp,
-            season_id
+            start_timestamp
         FROM bronze.full_matches_data
         WHERE unique_tournament_id = {TOURNAMENT_ID}
         AND status_type = 'finished'
@@ -81,7 +80,7 @@ def get_matches_needing_statistics(**context):
     
     # Filter out matches that already have statistics
     missing_matches = [
-        {'match_id': row[0], 'date': str(row[1]), 'season_id': row[2]} 
+        {'match_id': row[0], 'date': str(row[1])} 
         for row in all_matches 
         if row[0] not in existing_ids
     ]
@@ -91,7 +90,7 @@ def get_matches_needing_statistics(**context):
     if missing_matches:
         print("Sample matches needing stats:")
         for match in missing_matches[:5]:
-            print(f"  • match_id: {match['match_id']}, date: {match['date'][:10]}, season: {match['season_id']}")
+            print(f"  • match_id: {match['match_id']}, date: {match['date'][:10]}]")
     
     return {
         'missing_matches': missing_matches,
@@ -381,13 +380,14 @@ def trigger_dbt_stats_incremental(**context):
     """Trigger dbt incremental refresh for statistics"""
     print("Triggering dbt stats incremental refresh...")
     
-    cmd = 'docker exec dbt bash -c "cd /opt/dbt/project && dbt run --models bronze.stats_full_data_incremental"'
+    cmd = 'docker exec dbt bash -c "cd /opt/dbt/project && dbt run --select stats_full_data_incremental"'
     
     result = subprocess.run(cmd, shell=True, capture_output=True, text=True, timeout=600)
     
     if result.returncode != 0:
+        print(f"dbt stdout: {result.stdout}")
         print(f"dbt stderr: {result.stderr}")
-        raise Exception("dbt stats incremental refresh failed")
+        raise Exception(f"dbt stats incremental refresh failed with return code {result.returncode}")
     
     print("dbt stats incremental refresh completed")
     print(result.stdout)

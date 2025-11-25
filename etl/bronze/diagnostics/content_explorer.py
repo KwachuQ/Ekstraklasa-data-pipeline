@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Simple script to explore bronze data content
-Usage: python explore_bronze_content.py [date]
+Usage: python content_explorer.py [date]
 """
 
 # filepath: etl/scripts/explore_bronze_content.py
@@ -14,7 +14,7 @@ import os
 def init_minio_client():
     """Initialize MinIO client"""
     return Minio(
-        endpoint=os.getenv('MINIO_ENDPOINT', 'minio:9000'),
+        endpoint=os.getenv('MINIO_ENDPOINT', 'localhost:9000'),
         access_key=os.getenv('MINIO_ACCESS_KEY', 'minio'),
         secret_key=os.getenv('MINIO_SECRET_KEY', 'minio123'),
         secure=os.getenv('MINIO_SECURE', 'false').lower() == 'true'
@@ -71,23 +71,23 @@ def analyze_match_structure(match):
         if isinstance(obj, dict):
             for key, value in obj.items():
                 if isinstance(value, dict):
-                    print(f"{indent}📁 {key}: dict ({len(value)} keys)")
+                    print(f"{indent} {key}: dict ({len(value)} keys)")
                     if level < max_level:
                         print_structure(value, level + 1, max_level)
                 elif isinstance(value, list):
-                    print(f"{indent}📋 {key}: list ({len(value)} items)")
+                    print(f"{indent} {key}: list ({len(value)} items)")
                     if value and level < max_level:
                         print(f"{indent}  Example item:")
                         print_structure(value[0], level + 2, max_level)
                 else:
                     value_str = str(value)[:50] + "..." if len(str(value)) > 50 else str(value)
-                    print(f"{indent}📄 {key}: {type(value).__name__} = {value_str}")
+                    print(f"{indent} {key}: {type(value).__name__} = {value_str}")
     
     print_structure(clean_match)
 
 def display_matches_summary(matches):
     """Display a summary of matches"""
-    print(f"\n⚽ PRZEGLĄD {len(matches)} MECZÓW:")
+    print(f"\n PRZEGLĄD {len(matches)} MECZÓW:")
     print("=" * 80)
     
     for i, match in enumerate(matches, 1):
@@ -110,11 +110,11 @@ def display_matches_summary(matches):
         venue = match.get('venue', {}).get('stadium', {}).get('name', 'N/A') if match.get('venue') else 'N/A'
         
         print(f"{i:2d}. {time_str} | {home} vs {away}{score_str} [{status}]")
-        print(f"     🏟️  {venue} | 🎯 Kolejka {round_info} | 🆔 ID: {match.get('id', 'N/A')}")
+        print(f"     🏟️  {venue} |  Kolejka {round_info} | ID: {match.get('id', 'N/A')}")
 
 def display_full_match_json(match, index=0):
     """Display full JSON of a match"""
-    print(f"\n📄 PEŁNY JSON MECZU #{index + 1}:")
+    print(f"\n PEŁNY JSON MECZU #{index + 1}:")
     print("=" * 80)
     
     # Remove metadata for cleaner display
@@ -123,7 +123,7 @@ def display_full_match_json(match, index=0):
     
     # Show metadata separately
     if '_metadata' in match:
-        print(f"\n📦 METADANE BATCH:")
+        print(f"\n METADANE BATCH:")
         print("-" * 40)
         for key, value in match['_metadata'].items():
             print(f"{key}: {value}")
@@ -132,17 +132,17 @@ def main():
     """Main exploration function"""
     client = init_minio_client()
     
-    print("🔍 BRONZE DATA EXPLORER - EKSTRAKLASA")
+    print(" BRONZE DATA EXPLORER - EKSTRAKLASA")
     print("=" * 60)
     
     # Get available dates
     available_dates = list_available_dates(client)
     
     if not available_dates:
-        print("❌ Brak danych w bronze layer")
+        print(" Brak danych w bronze layer")
         return
     
-    print(f"📅 Dostępne daty ({len(available_dates)}):")
+    print(f" Dostępne daty ({len(available_dates)}):")
     for i, date in enumerate(available_dates[:10], 1):
         print(f"  {i:2d}. {date}")
     
@@ -156,18 +156,18 @@ def main():
         target_date = available_dates[0]  # Most recent
     
     if target_date not in available_dates:
-        print(f"❌ Data {target_date} nie jest dostępna")
-        print(f"💡 Użyj: python {sys.argv[0]} [data]")
-        print(f"💡 Przykład: python {sys.argv[0]} {available_dates[0]}")
+        print(f" Data {target_date} nie jest dostępna")
+        print(f" Użyj: python {sys.argv[0]} [data]")
+        print(f" Przykład: python {sys.argv[0]} {available_dates[0]}")
         return
     
-    print(f"\n🎯 Analizuję dane z daty: {target_date}")
+    print(f"\n Analizuję dane z daty: {target_date}")
     
     # Read matches for the date
     matches = read_matches_for_date(client, target_date)
     
     if not matches:
-        print(f"❌ Brak meczów dla daty {target_date}")
+        print(f"Brak meczów dla daty {target_date}")
         return
     
     # Display summary
@@ -183,15 +183,15 @@ def main():
         print(f"\n" + "="*80)
         display_full_match_json(matches[0])
     
-    print(f"\n💡 Aby zobaczyć inny mecz, uruchom:")
+    print(f"\n Aby zobaczyć inny mecz, uruchom:")
     print(f"   python {sys.argv[0]} {target_date}")
-    print(f"\n💡 Dostępne daty: {', '.join(available_dates[:5])}...")
+    print(f"\n Dostępne daty: {', '.join(available_dates[:5])}...")
 
 if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        print("\n👋 Przerwano przez użytkownika")
+        print("\n Przerwano przez użytkownika")
     except Exception as e:
-        print(f"❌ Błąd: {e}")
+        print(f" Błąd: {e}")
         sys.exit(1)

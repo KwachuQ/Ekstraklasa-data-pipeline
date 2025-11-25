@@ -39,12 +39,18 @@ sources:
             tests:
               - not_null
           - name: tournament_id
-          - name: season_id
           - name: match_id
           - name: ingestion_timestamp
           - name: file_path
           - name: batch_id
           
+      - name: full_matches_data
+        description: "Transformed match data from raw_matches"
+        columns:
+          - name: match_id
+          - name: season_id
+          - name: unique_tournament_id
+          - name: status_type
 
       - name: minio_json_files
         description: "JSON files from MinIO bronze bucket"

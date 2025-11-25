@@ -18,7 +18,7 @@ default_args = {
 }
 
 with DAG(
-    'orchestrate_incremental_pipeline',
+    '00_incremental_pipeline_orchestrator',
     default_args=default_args,
     description='Master DAG - orchestrates full incremental pipeline execution',
     schedule='0 9 * * 2',  # Every Tuesday at 9:00 AM

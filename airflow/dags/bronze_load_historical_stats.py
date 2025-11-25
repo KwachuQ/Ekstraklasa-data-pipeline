@@ -25,7 +25,6 @@ def load_all_stats(**context):
             id SERIAL PRIMARY KEY,
             data JSONB NOT NULL,
             tournament_id INTEGER,
-            season_id INTEGER,
             match_id INTEGER,
             ingestion_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             file_path TEXT,
@@ -140,8 +139,8 @@ def load_all_stats(**context):
                 
                 # Insert into PostgreSQL with consistent column names
                 insert_sql = """
-                    INSERT INTO bronze.raw_stats (data, tournament_id, season_id, match_id, file_path, batch_id)
-                    VALUES (%s, %s, %s, %s, %s, %s)
+                    INSERT INTO bronze.raw_stats (data, tournament_id, match_id, file_path, batch_id)
+                    VALUES (%s, %s, %s, %s, %s)
                 """
                 
                 postgres_hook.run(
@@ -149,7 +148,6 @@ def load_all_stats(**context):
                     parameters=(
                         json.dumps(stats_data),
                         202,  # Default tournament_id for Ekstraklasa
-                        season_id,  # Mapped season_id
                         match_id,
                         obj_key,
                         batch_id
