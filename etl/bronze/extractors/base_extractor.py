@@ -51,12 +51,12 @@ class SofascoreETL:
     def __init__(self):
         """Initialize ETL with MinIO client and storage manager"""
         self.minio_client = Minio(
-            endpoint=os.getenv('MINIO_ENDPOINT', 'minio:9000'),
+            endpoint=os.getenv('MINIO_ENDPOINT', 'localhost:9000'),
             access_key=os.getenv('MINIO_ACCESS_KEY', 'minio'),
             secret_key=os.getenv('MINIO_SECRET_KEY', 'minio123'),
             secure=os.getenv('MINIO_SECURE', 'false').lower() == 'true'
         )
-        self.storage = BronzeStorageManager(self.minio_client)
+        self.storage = BronzeStorageManager(self.minio_client, bucket_name=os.getenv('BRONZE_BUCKET', 'bronze-test'))
     
     def __enter__(self):
         """Support sync context manager"""

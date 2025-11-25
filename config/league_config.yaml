@@ -9,25 +9,25 @@
 # ----------------------------
 # Currently selected league for data extraction
 active_league:
-  country: "Poland"
-  country_id: 47
-  league_name: "Ekstraklasa"
-  league_id: 202
+  country: "Spain"
+  country_id: 32
+  league_name: "LaLiga"
+  league_id: 8
 
 # Active Season Configuration
 # ---------------------------
 # Currently selected season for data extraction
 active_season:
-  name: "Ekstraklasa 25/26"
+  name: "LaLiga 25/26"
   year: "25/26"
-  season_id: 76477
+  season_id: 77559
 
 # ETL Configuration
 # -----------------
 # Operational parameters for the extraction process
 etl:
   # Pagination settings
-  max_pages: 25              # Maximum API pages to scan during extraction
+  max_pages: 2              # Maximum API pages to scan during extraction
   batch_size: 50             # Number of matches to process in each batch for statistics extraction
   
   # Date Range Filtering
