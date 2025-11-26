@@ -4,3 +4,4 @@ __pycache__/
 .env.local
 dbt_packages/
 logs/
+data-pipeline-sofascore.code-workspace
