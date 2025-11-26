@@ -447,8 +447,9 @@ class StatisticsFetcher:
 # ============================================================================
 
 def main():
-    """Example usage for testing"""
+    """Example usage - uses configuration from YAML"""
     import sys
+    from etl.utils.config_loader import get_active_config
     
     # Configure logging
     logging.basicConfig(
@@ -462,13 +463,20 @@ def main():
         logger.error("❌ RAPIDAPI_KEY environment variable not set!")
         sys.exit(1)
     
-    # Test match IDs
-    test_match_ids = [12648635]
-    
     try:
+        # Load configuration
+        config = get_active_config()
+        
+        logger.info("=== Statistics Fetcher Test ===")
+        logger.info(f"League: {config['league_name']}")
+        logger.info(f"Season: {config['season_name']}")
+        
+        # Test match IDs (replace with actual match IDs)
+        test_match_ids = [12648635]
+        
         fetcher = StatisticsFetcher(
             rapidapi_key=api_key,
-            tournament_id=202
+            tournament_id=config['league_id']
         )
         
         result = fetcher.fetch_and_save_statistics(
@@ -478,6 +486,10 @@ def main():
         
         logger.info(f"Test result: {result}")
         
+    except FileNotFoundError as e:
+        logger.error(str(e))
+        logger.error("Please create config/league_config.yaml before running")
+        sys.exit(1)
     except Exception as e:
         logger.error(f"Test failed: {e}", exc_info=True)
         sys.exit(1)

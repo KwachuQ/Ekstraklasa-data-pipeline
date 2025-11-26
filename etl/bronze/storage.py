@@ -50,7 +50,7 @@ class BronzeStorageManager:
     
     SCHEMA_VERSION = "1.0"
     
-    def __init__(self, minio_client: Minio, bucket_name: str = "bronze"):
+    def __init__(self, minio_client: Minio, bucket_name: str = "bronze-test"):
         """
         Initialize storage manager
         

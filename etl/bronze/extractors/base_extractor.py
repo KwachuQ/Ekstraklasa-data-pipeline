@@ -51,12 +51,12 @@ class SofascoreETL:
     def __init__(self):
         """Initialize ETL with MinIO client and storage manager"""
         self.minio_client = Minio(
-            endpoint=os.getenv('MINIO_ENDPOINT', 'minio:9000'),
+            endpoint=os.getenv('MINIO_ENDPOINT', 'localhost:9000'),
             access_key=os.getenv('MINIO_ACCESS_KEY', 'minio'),
             secret_key=os.getenv('MINIO_SECRET_KEY', 'minio123'),
             secure=os.getenv('MINIO_SECURE', 'false').lower() == 'true'
         )
-        self.storage = BronzeStorageManager(self.minio_client)
+        self.storage = BronzeStorageManager(self.minio_client, bucket_name=os.getenv('BRONZE_BUCKET', 'bronze-test'))
     
     def __enter__(self):
         """Support sync context manager"""
@@ -98,6 +98,67 @@ class SofascoreETL:
         error_msg = f"{context}: {type(error).__name__}: {str(error)}"
         logger.error(error_msg, exc_info=logger.isEnabledFor(logging.DEBUG))
         results.errors.append(error_msg)
+    
+    def _filter_matches_by_date_range(
+        self,
+        matches: List[Dict[str, Any]],
+        start_date: Optional[str] = None,
+        end_date: Optional[str] = None
+    ) -> List[Dict[str, Any]]:
+        """
+        Filter matches by date range
+        
+        Args:
+            matches: List of match dictionaries
+            start_date: Include matches from this date onwards (YYYY-MM-DD), None = no lower bound
+            end_date: Include matches up to this date (YYYY-MM-DD), None = no upper bound
+            
+        Returns:
+            Filtered list of matches
+        """
+        if not start_date and not end_date:
+            return matches  # No filtering needed
+        
+        # Parse dates if provided
+        start_dt = datetime.strptime(start_date, '%Y-%m-%d').date() if start_date else None
+        end_dt = datetime.strptime(end_date, '%Y-%m-%d').date() if end_date else None
+        
+        filtered_matches = []
+        
+        for match in matches:
+            try:
+                timestamp = match.get('startTimestamp', 0)
+                if not timestamp:
+                    logger.debug(f"Match {match.get('id')} has no timestamp, skipping")
+                    continue
+                
+                match_date = datetime.fromtimestamp(timestamp).date()
+                
+                # Check if match is within date range
+                if start_dt and match_date < start_dt:
+                    logger.debug(f"  ⊗ Match {match.get('id')} before start_date: {match_date}")
+                    continue
+                
+                if end_dt and match_date > end_dt:
+                    logger.debug(f"  ⊗ Match {match.get('id')} after end_date: {match_date}")
+                    continue
+                
+                filtered_matches.append(match)
+                logger.debug(f"  ✓ Match {match.get('id')} in range: {match_date}")
+                    
+            except (ValueError, OSError) as e:
+                logger.warning(
+                    f"Invalid timestamp for match {match.get('id', 'unknown')}: {e}"
+                )
+                continue
+        
+        if start_date or end_date:
+            logger.info(
+                f"Date filter: {len(filtered_matches)}/{len(matches)} matches in range "
+                f"[{start_date or 'ANY'} to {end_date or 'ANY'}]"
+            )
+        
+        return filtered_matches
     
     def _group_matches_by_date(
         self,
@@ -163,14 +224,15 @@ class SofascoreETL:
                     replace_partition=replace_partition
                 )
                 
-                if storage_result['success']:
-                    results.stored_batches.append(storage_result)
-                    results.total_matches += storage_result['record_count']
+                # StorageResult is a dataclass - use attributes, not dict access
+                if storage_result.success:
+                    results.stored_batches.append(storage_result.to_dict())
+                    results.total_matches += storage_result.record_count
                     logger.info(
-                        f"✓ Stored {storage_result['record_count']} matches for {match_date}"
+                        f"✓ Stored {storage_result.record_count} matches for {match_date}"
                     )
                 else:
-                    error_msg = storage_result.get('error', 'Unknown storage error')
+                    error_msg = storage_result.error or 'Unknown storage error'
                     self._handle_error(
                         Exception(error_msg),
                         f"Storage failed for {match_date}",
@@ -185,7 +247,9 @@ class SofascoreETL:
         tournament_id: int, 
         season_id: int,
         max_pages: int = 5,
-        replace_partition: bool = False
+        replace_partition: bool = False,
+        start_date: Optional[str] = None,
+        end_date: Optional[str] = None
     ) -> Dict[str, Any]:
         """
         Extract matches for tournament/season with partitioning
@@ -195,6 +259,8 @@ class SofascoreETL:
             season_id: Season identifier  
             max_pages: Maximum pages to fetch
             replace_partition: Whether to replace existing data
+            start_date: Filter matches from this date (YYYY-MM-DD), None = no lower bound
+            end_date: Filter matches to this date (YYYY-MM-DD), None = no upper bound
         
         Returns:
             Dictionary with extraction results (for DAG compatibility)
@@ -212,6 +278,8 @@ class SofascoreETL:
             f"Starting extraction: tournament={tournament_id}, "
             f"season={season_id}, max_pages={max_pages}"
         )
+        if start_date or end_date:
+            logger.info(f"Date range filter: [{start_date or 'ANY'} to {end_date or 'ANY'}]")
         
         async with SofascoreClient() as client:
             for page in range(max_pages):
@@ -231,8 +299,17 @@ class SofascoreETL:
                         logger.info(f"No more matches found at page {page + 1}")
                         break
                     
+                    # Apply date filter if specified
+                    filtered_matches = self._filter_matches_by_date_range(
+                        matches, start_date, end_date
+                    )
+                    
+                    if not filtered_matches:
+                        logger.info(f"No matches in date range on page {page + 1}")
+                        continue
+                    
                     # Group and store by date
-                    matches_by_date = self._group_matches_by_date(matches)
+                    matches_by_date = self._group_matches_by_date(filtered_matches)
                     self._store_matches_by_date(
                         matches_by_date=matches_by_date,
                         metadata=response.metadata,
@@ -261,7 +338,7 @@ class SofascoreETL:
         batch_size: int = 50
     ) -> Dict[str, Any]:
         """
-        Extract detailed match information in batches
+        Extract detailed match statistics in batches
         
         Args:
             match_ids: List of match IDs to fetch
@@ -297,10 +374,11 @@ class SofascoreETL:
                 
                 logger.info(f"Processing batch {batch_number}/{total_batches}")
                 
-                # Fetch matches in batch
+                # Fetch match statistics in batch
                 for match_id in batch_ids:
                     try:
-                        response = await client.get_match_details(match_id)
+                        # Use get_match_statistics instead of get_match_details
+                        response = await client.get_match_statistics(match_id)
                         
                         if response.is_valid:
                             if response.validated_items:
@@ -321,7 +399,7 @@ class SofascoreETL:
                 
                 # Store batch if we have valid matches
                 if batch_matches:
-                    self._store_match_details_batch(
+                    await self._store_match_statistics_batch(
                         batch_matches=batch_matches,
                         batch_number=batch_number,
                         tournament_id=tournament_id,
@@ -330,11 +408,11 @@ class SofascoreETL:
                     )
         
         logger.info(
-            f"Match details extraction complete: {results['total_processed']} processed"
+            f"Match statistics extraction complete: {results['total_processed']} processed"
         )
         return results
     
-    async def _store_match_details_batch(
+    async def _store_match_statistics_batch(
         self,
         batch_matches: List[Dict[str, Any]],
         batch_number: int,
@@ -342,37 +420,39 @@ class SofascoreETL:
         season_id: int,
         results: Dict[str, Any]
     ) -> None:
-        """Store a batch of match details"""
+        """Store a batch of match statistics"""
         try:
-            matches_by_date = self._group_matches_by_date(batch_matches)
+            # For statistics, use current date as partition key
+            # (statistics don't have startTimestamp like matches do)
+            current_date = datetime.now().strftime('%Y-%m-%d')
             
-            for match_date, date_matches in matches_by_date.items():
-                storage_result = self.storage.store_batch(
-                    data_type="match_details",
-                    records=date_matches,
-                    metadata={
-                        "batch_id": f"details_batch_{batch_number}_{match_date}",
-                        "ingestion_timestamp": datetime.now(timezone.utc).isoformat(),
-                        "source": "sofascore_api",
-                        "endpoint": "match_details",
-                        "batch_number": batch_number
-                    },
-                    tournament_id=tournament_id,
-                    season_id=season_id,
-                    match_date=match_date
+            storage_result = self.storage.store_batch(
+                data_type="statistics",  # Changed from match_details
+                records=batch_matches,
+                metadata={
+                    "batch_id": f"stats_batch_{batch_number}",
+                    "ingestion_timestamp": datetime.now(timezone.utc).isoformat(),
+                    "source": "sofascore_api",
+                    "endpoint": "match_statistics",
+                    "batch_number": batch_number
+                },
+                tournament_id=tournament_id,
+                season_id=season_id,
+                match_date=current_date  # Use current date for statistics
+            )
+            
+            # StorageResult is a dataclass - use attributes, not dict access
+            if storage_result.success:
+                results['stored_batches'].append(storage_result.to_dict())
+                results['total_processed'] += storage_result.record_count
+                logger.info(
+                    f"✓ Stored {storage_result.record_count} statistics for batch {batch_number}"
                 )
+            else:
+                error_msg = storage_result.error or 'Unknown error'
+                logger.error(f"Storage failed for batch {batch_number}: {error_msg}")
+                results['errors'].append(error_msg)
                 
-                if storage_result['success']:
-                    results['stored_batches'].append(storage_result)
-                    results['total_processed'] += storage_result['record_count']
-                else:
-                    error_msg = (
-                        f"Storage failed for batch {batch_number}: "
-                        f"{storage_result.get('error', 'Unknown error')}"
-                    )
-                    logger.error(error_msg)
-                    results['errors'].append(error_msg)
-                    
         except Exception as e:
             error_msg = f"Error storing batch {batch_number}: {type(e).__name__}: {str(e)}"
             logger.error(error_msg, exc_info=True)
@@ -381,23 +461,37 @@ class SofascoreETL:
 
 async def main():
     """
-    Example usage: Extract Ekstraklasa 2025/26 season data
+    Extract league data from configuration file
+    Uses config/league_config.yaml for all parameters
     """
-    # Ekstraklasa 2025-2026 configuration
-    EKSTRAKLASA_ID = 202
-    SEASON_2025_ID = 76477
+    from etl.utils.config_loader import get_active_config
     
     try:
+        # Load configuration
+        config = get_active_config()
+        
         logger.info("=== Starting Sofascore ETL Process ===")
+        logger.info(f"League: {config['league_name']} ({config['country']})")
+        logger.info(f"League ID: {config['league_id']}")
+        logger.info(f"Season: {config['season_name']} (ID: {config['season_id']})")
+        logger.info(f"Max pages: {config['max_pages']}")
+        
+        # Get date filters from config
+        start_date = config.get('start_date')
+        end_date = config.get('end_date')
+        if start_date or end_date:
+            logger.info(f"Date range: [{start_date or 'ANY'} to {end_date or 'ANY'}]")
         
         async with SofascoreETL() as etl:
             # Extract tournament matches
-            logger.info(f"Extracting matches for Ekstraklasa (ID: {EKSTRAKLASA_ID})")
-            matches_result = etl.extract_tournament_matches(
-                tournament_id=EKSTRAKLASA_ID,
-                season_id=SEASON_2025_ID,
-                max_pages=3,
-                replace_partition=True
+            logger.info("Extracting tournament matches...")
+            matches_result = await etl.extract_tournament_matches(
+                tournament_id=config['league_id'],
+                season_id=config['season_id'],
+                max_pages=config['max_pages'],
+                replace_partition=True,
+                start_date=start_date,
+                end_date=end_date
             )
             
             logger.info("Match extraction completed:")
@@ -407,15 +501,21 @@ async def main():
             
             if matches_result['errors']:
                 logger.error("Errors encountered:")
-                for error in matches_result['errors']:
+                for error in matches_result['errors'][:5]:  # Show first 5
                     logger.error(f"  • {error}")
+                if len(matches_result['errors']) > 5:
+                    logger.error(f"  ... and {len(matches_result['errors']) - 5} more errors")
             
             # List available partitions
-            partitions = etl.storage.list_partitions("matches", EKSTRAKLASA_ID)
+            partitions = etl.storage.list_partitions("matches", config['league_id'])
             logger.info(f"Available partitions: {len(partitions)}")
         
         logger.info("=== ETL Process Completed Successfully ===")
         
+    except FileNotFoundError as e:
+        logger.error(str(e))
+        logger.error("Please create config/league_config.yaml before running the extractor")
+        raise
     except Exception as e:
         logger.error(f"ETL process failed: {type(e).__name__}: {e}", exc_info=True)
         raise

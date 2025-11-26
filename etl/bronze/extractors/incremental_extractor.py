@@ -397,22 +397,35 @@ class SofascoreIncrementalETL:
 
 async def main():
     """
-    Example usage: Incremental extraction for Ekstraklasa
+    Incremental extraction from configuration file
+    Uses config/league_config.yaml for all parameters
     """
-    # Ekstraklasa 2025-2026 configuration
-    EKSTRAKLASA_ID = 202
-    SEASON_2025_ID = 76477
-    LAST_EXTRACTION_DATE = "2025-01-15"  # Replace with actual last date
+    from etl.utils.config_loader import get_active_config
     
     try:
+        # Load configuration
+        config = get_active_config()
+        
+        # Check if incremental mode is configured
+        if not config['last_extraction_date']:
+            logger.error("Incremental extraction requires last_extraction_date")
+            logger.error("Please set etl.last_extraction_date in config/league_config.yaml")
+            logger.error("Example: last_extraction_date: '2025-01-15'")
+            return
+        
         logger.info("=== Starting Incremental ETL Process ===")
+        logger.info(f"League: {config['league_name']} ({config['country']})")
+        logger.info(f"League ID: {config['league_id']}")
+        logger.info(f"Season: {config['season_name']} (ID: {config['season_id']})")
+        logger.info(f"Extracting matches after: {config['last_extraction_date']}")
+        logger.info(f"Max pages to scan: {config['max_pages']}")
         
         async with SofascoreIncrementalETL() as etl:
             result = await etl.extract_new_matches(
-                tournament_id=EKSTRAKLASA_ID,
-                season_id=SEASON_2025_ID,
-                last_match_date=LAST_EXTRACTION_DATE,
-                max_pages=25
+                tournament_id=config['league_id'],
+                season_id=config['season_id'],
+                last_match_date=config['last_extraction_date'],
+                max_pages=config['max_pages']
             )
             
             logger.info("Incremental extraction completed:")
@@ -423,11 +436,17 @@ async def main():
             
             if result['errors']:
                 logger.error("Errors encountered:")
-                for error in result['errors']:
+                for error in result['errors'][:5]:  # Show first 5
                     logger.error(f"  • {error}")
+                if len(result['errors']) > 5:
+                    logger.error(f"  ... and {len(result['errors']) - 5} more errors")
         
         logger.info("=== Incremental ETL Process Completed ===")
         
+    except FileNotFoundError as e:
+        logger.error(str(e))
+        logger.error("Please create config/league_config.yaml before running the extractor")
+        raise
     except Exception as e:
         logger.error(f"Incremental ETL failed: {type(e).__name__}: {e}", exc_info=True)
         raise

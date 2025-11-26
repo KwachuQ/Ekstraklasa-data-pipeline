@@ -1,0 +1,247 @@
+# ====================================================================
+# League Configuration for Sofascore Data Pipeline
+# ====================================================================
+# This file controls which league, season, and date range to extract.
+# Modify the values below to switch between different leagues/seasons.
+# ====================================================================
+
+# Active League Configuration
+# ----------------------------
+# Currently selected league for data extraction
+active_league:
+  country: "Poland"
+  country_id: 47
+  league_name: "Ekstraklasa"
+  league_id: 202
+
+# Active Season Configuration
+# ---------------------------
+# Currently selected season for data extraction
+active_season:
+  name: "Ekstraklasa 25/26"
+  year: "25/26"
+  season_id: 76477
+
+# ETL Configuration
+# -----------------
+# Operational parameters for the extraction process
+etl:
+  # Pagination settings
+  max_pages: 20             # Maximum API pages to scan during extraction
+  batch_size: 50             # Number of matches to process in each batch for statistics extraction
+  
+  # Date Range Filtering
+  # All dates must be in YYYY-MM-DD format
+  # Set to null to disable filtering for that boundary
+  
+  start_date: null           # Include matches from this date onwards (inclusive)
+                             # Example: "2024-08-01" to start from August 1st, 2024
+  
+  end_date: null             # Include matches up to this date (inclusive)
+                             # Example: "2024-12-31" to end at December 31st, 2024
+  
+  # Incremental Extraction Mode
+  # ----------------------------
+  # Use this for daily/periodic updates to get only NEW matches
+  last_extraction_date: null # Only fetch matches AFTER this date
+                             # Example: "2025-01-15"
+                             # NOTE: If set, this takes precedence over start_date/end_date
+
+# ====================================================================
+# Available Leagues Reference
+# ====================================================================
+# Pre-configured leagues from different countries.
+# To switch to a different league, update the active_league section above
+# with values from this list, or use the CLI tool.
+
+available_leagues:
+  
+  # Spain
+  spain:
+    country: "Spain"
+    country_id: 32
+    leagues:
+      - name: "LaLiga"
+        league_id: 8
+      - name: "LaLiga 2"
+        league_id: 54
+  
+  # Germany
+  germany:
+    country: "Germany"
+    country_id: 30
+    leagues:
+      - name: "Bundesliga"
+        league_id: 35
+      - name: "2. Bundesliga"
+        league_id: 44
+  
+  # England
+  england:
+    country: "England"
+    country_id: 1
+    leagues:
+      - name: "Premier League"
+        league_id: 17
+      - name: "Championship"
+        league_id: 18
+  
+  # Italy
+  italy:
+    country: "Italy"
+    country_id: 23
+    leagues:
+      - name: "Serie A"
+        league_id: 23
+      - name: "Serie B"
+        league_id: 53
+  
+  # France
+  france:
+    country: "France"
+    country_id: 7
+    leagues:
+      - name: "Ligue 1"
+        league_id: 34
+      - name: "Ligue 2"
+        league_id: 182
+  
+  # Portugal
+  portugal:
+    country: "Portugal"
+    country_id: 44
+    leagues:
+      - name: "Liga Portugal Betclic"
+        league_id: 238
+      - name: "Liga Portugal 2"
+        league_id: 239
+  
+  # Poland
+  poland:
+    country: "Poland"
+    country_id: 47
+    leagues:
+      - name: "Ekstraklasa"
+        league_id: 202
+      - name: "Betclic 1. Liga"
+        league_id: 229
+  
+  # Netherlands
+  netherlands:
+    country: "Netherlands"
+    country_id: 3
+    leagues:
+      - name: "VriendenLoterij Eredivisie"
+        league_id: 37
+      - name: "Eerste Divisie"
+        league_id: 131
+  
+  # Norway
+  norway:
+    country: "Norway"
+    country_id: 38
+    leagues:
+      - name: "Eliteserien"
+        league_id: 20
+      - name: "Norwegian 1st Division"
+        league_id: 22
+  
+  # Sweden
+  sweden:
+    country: "Sweden"
+    country_id: 21
+    leagues:
+      - name: "Allsvenskan"
+        league_id: 40
+      - name: "Superettan"
+        league_id: 46
+  
+  # Denmark
+  denmark:
+    country: "Denmark"
+    country_id: 14
+    leagues:
+      - name: "Danish Superliga"
+        league_id: 39
+      - name: "Betinia Liga"
+        league_id: 47
+  
+  # Austria
+  austria:
+    country: "Austria"
+    country_id: 6
+    leagues:
+      - name: "Austrian Bundesliga"
+        league_id: 45
+  
+  # Czech Republic
+  czech_republic:
+    country: "Czech Republic"
+    country_id: 9
+    leagues:
+      - name: "Czech First League"
+        league_id: 172
+      - name: "FNL"
+        league_id: 205
+
+# ====================================================================
+# Configuration Examples
+# ====================================================================
+# Below are common configuration patterns. Copy and adjust as needed.
+
+# Example 1: Full Historical Load (all available matches)
+# --------------------------------------------------------
+# active_league:
+#   league_id: 202
+#   ...
+# etl:
+#   start_date: null
+#   end_date: null
+#   last_extraction_date: null
+
+# Example 2: Specific Date Range (e.g., 2024 season only)
+# --------------------------------------------------------
+# active_league:
+#   league_id: 202
+#   ...
+# etl:
+#   start_date: "2024-08-01"
+#   end_date: "2024-12-31"
+#   last_extraction_date: null
+
+# Example 3: Incremental Update (only new matches since last run)
+# ----------------------------------------------------------------
+# active_league:
+#   league_id: 202
+#   ...
+# etl:
+#   start_date: null
+#   end_date: null
+#   last_extraction_date: "2025-01-15"
+
+# Example 4: Open-ended Range (from specific date to present)
+# ------------------------------------------------------------
+# active_league:
+#   league_id: 202
+#   ...
+# etl:
+#   start_date: "2024-01-01"
+#   end_date: null
+#   last_extraction_date: null
+
+# Example 5: Switch to LaLiga
+# ----------------------------
+# active_league:
+#   country: "Spain"
+#   country_id: 32
+#   league_name: "LaLiga"
+#   league_id: 8
+# active_season:
+#   name: "LaLiga 24/25"
+#   year: "24/25"
+#   season_id: 61643  # You need to find this ID from Sofascore API
+# etl:
+#   start_date: null
+#   end_date: null
+#   last_extraction_date: null
+
