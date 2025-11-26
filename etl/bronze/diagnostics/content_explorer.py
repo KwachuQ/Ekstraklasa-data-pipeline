@@ -4,7 +4,6 @@ Simple script to explore bronze data content
 Usage: python content_explorer.py [date]
 """
 
-# filepath: etl/scripts/explore_bronze_content.py
 import json
 import sys
 from datetime import datetime
@@ -22,7 +21,7 @@ def init_minio_client():
 
 def list_available_dates(client):
     """List all available dates in bronze layer"""
-    objects = client.list_objects('bronze', prefix='matches/', recursive=True)
+    objects = client.list_objects('bronze-test', prefix='matches/', recursive=True)
     ndjson_files = [obj for obj in objects if obj.object_name.endswith('.ndjson')]
     
     dates = set()
@@ -36,14 +35,14 @@ def list_available_dates(client):
 
 def read_matches_for_date(client, target_date):
     """Read all matches for a specific date"""
-    prefix = f"matches/tournament_id=202/season_id=76477/date={target_date}/"
-    objects = client.list_objects('bronze', prefix=prefix, recursive=True)
+    prefix = f"matches/tournament_id=8/season_id=77559/date={target_date}/"
+    objects = client.list_objects('bronze-test', prefix=prefix, recursive=True)
     ndjson_files = [obj for obj in objects if obj.object_name.endswith('.ndjson')]
     
     all_matches = []
     for obj in ndjson_files:
         try:
-            response = client.get_object('bronze', obj.object_name)
+            response = client.get_object('bronze-test', obj.object_name)
             content = response.read().decode('utf-8')
             
             for line in content.strip().split('\n'):
@@ -57,7 +56,7 @@ def read_matches_for_date(client, target_date):
 
 def analyze_match_structure(match):
     """Analyze the structure of a match record"""
-    print("🔍 STRUKTURA REKORDU MECZU:")
+    print("Match record structure:")
     print("=" * 50)
     
     # Remove metadata for cleaner view
@@ -87,7 +86,7 @@ def analyze_match_structure(match):
 
 def display_matches_summary(matches):
     """Display a summary of matches"""
-    print(f"\n PRZEGLĄD {len(matches)} MECZÓW:")
+    print(f"\n Overview of {len(matches)} matches:")
     print("=" * 80)
     
     for i, match in enumerate(matches, 1):
@@ -114,7 +113,7 @@ def display_matches_summary(matches):
 
 def display_full_match_json(match, index=0):
     """Display full JSON of a match"""
-    print(f"\n PEŁNY JSON MECZU #{index + 1}:")
+    print(f"\n FULL JSON OF MATCH #{index + 1}:")
     print("=" * 80)
     
     # Remove metadata for cleaner display
@@ -123,7 +122,7 @@ def display_full_match_json(match, index=0):
     
     # Show metadata separately
     if '_metadata' in match:
-        print(f"\n METADANE BATCH:")
+        print(f"\n BATCH METADATA:")
         print("-" * 40)
         for key, value in match['_metadata'].items():
             print(f"{key}: {value}")
@@ -132,22 +131,22 @@ def main():
     """Main exploration function"""
     client = init_minio_client()
     
-    print(" BRONZE DATA EXPLORER - EKSTRAKLASA")
+    print(" BRONZE DATA EXPLORER")
     print("=" * 60)
     
     # Get available dates
     available_dates = list_available_dates(client)
     
     if not available_dates:
-        print(" Brak danych w bronze layer")
+        print(" No data in bronze layer")
         return
     
-    print(f" Dostępne daty ({len(available_dates)}):")
+    print(f" Available dates ({len(available_dates)}):")
     for i, date in enumerate(available_dates[:10], 1):
         print(f"  {i:2d}. {date}")
     
     if len(available_dates) > 10:
-        print(f"      ... i {len(available_dates) - 10} więcej")
+        print(f"      ... and {len(available_dates) - 10} more")
     
     # Determine target date
     if len(sys.argv) > 1:
@@ -156,18 +155,18 @@ def main():
         target_date = available_dates[0]  # Most recent
     
     if target_date not in available_dates:
-        print(f" Data {target_date} nie jest dostępna")
-        print(f" Użyj: python {sys.argv[0]} [data]")
-        print(f" Przykład: python {sys.argv[0]} {available_dates[0]}")
+        print(f" Data {target_date} is not available")
+        print(f" Use: python {sys.argv[0]} [date]")
+        print(f" Example: python {sys.argv[0]} {available_dates[0]}")
         return
     
-    print(f"\n Analizuję dane z daty: {target_date}")
+    print(f"\n Analyzing data from date: {target_date}")
     
     # Read matches for the date
     matches = read_matches_for_date(client, target_date)
     
     if not matches:
-        print(f"Brak meczów dla daty {target_date}")
+        print(f"No matches for date {target_date}")
         return
     
     # Display summary
@@ -183,15 +182,15 @@ def main():
         print(f"\n" + "="*80)
         display_full_match_json(matches[0])
     
-    print(f"\n Aby zobaczyć inny mecz, uruchom:")
+    print(f"\n To view a different match, run:")
     print(f"   python {sys.argv[0]} {target_date}")
-    print(f"\n Dostępne daty: {', '.join(available_dates[:5])}...")
+    print(f"\n Available dates: {', '.join(available_dates[:5])}...")
 
 if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        print("\n Przerwano przez użytkownika")
+        print("\n Interrupted by user")
     except Exception as e:
-        print(f" Błąd: {e}")
+        print(f" Error: {e}")
         sys.exit(1)

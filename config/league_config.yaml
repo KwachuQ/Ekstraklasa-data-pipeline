@@ -34,10 +34,10 @@ etl:
   # All dates must be in YYYY-MM-DD format
   # Set to null to disable filtering for that boundary
   
-  start_date: null           # Include matches from this date onwards (inclusive)
+  start_date: "2025-11-01"           # Include matches from this date onwards (inclusive)
                              # Example: "2024-08-01" to start from August 1st, 2024
   
-  end_date: null             # Include matches up to this date (inclusive)
+  end_date: "2025-11-25"             # Include matches up to this date (inclusive)
                              # Example: "2024-12-31" to end at December 31st, 2024
   
   # Incremental Extraction Mode
