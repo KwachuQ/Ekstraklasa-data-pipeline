@@ -56,7 +56,7 @@ class SofascoreETL:
             secret_key=os.getenv('MINIO_SECRET_KEY', 'minio123'),
             secure=os.getenv('MINIO_SECURE', 'false').lower() == 'true'
         )
-        self.storage = BronzeStorageManager(self.minio_client, bucket_name=os.getenv('BRONZE_BUCKET', 'bronze-test'))
+        self.storage = BronzeStorageManager(self.minio_client, bucket_name=os.getenv('BRONZE_BUCKET', 'bronze'))
     
     def __enter__(self):
         """Support sync context manager"""
