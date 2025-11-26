@@ -5,4 +5,5 @@ __pycache__/
 dbt_packages/
 logs/
 tests/
+tests/__pycache__/
 *.code-workspace
