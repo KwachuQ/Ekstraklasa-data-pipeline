@@ -7,6 +7,9 @@ cd ../docker
 # Disable Git Bash path conversion
 export MSYS_NO_PATHCONV=1
 
+# Ensure RAPIDAPI_KEY is set
+export RAPIDAPI_KEY=${RAPIDAPI_KEY:-"YOUR_KEY_HERE"}
+
 # Check if DAG file exists in container
 echo "[INFO] Checking DAG file in container..."
 docker-compose exec airflow-webserver test -f /opt/airflow/dags/ekstraklasa_backfill.py
