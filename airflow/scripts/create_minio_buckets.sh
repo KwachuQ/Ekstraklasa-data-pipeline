@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -e
+
 echo "[INFO] >>> Running create_minio_buckets.sh <<<"
 # Create MinIO buckets using Airflow's S3Hook
 set -e

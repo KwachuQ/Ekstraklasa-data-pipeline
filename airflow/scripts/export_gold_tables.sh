@@ -1,5 +1,7 @@
-#!/bin/bash
-# filepath: airflow\scripts\export_all_gold_tables.sh
+#!/usr/bin/env bash
+set -e
+
+# filepath: airflow\scripts\export_gold_tables.sh
 
 # Export all Gold layer tables to CSV files
 

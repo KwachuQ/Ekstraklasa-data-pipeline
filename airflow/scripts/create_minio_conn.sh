@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -e
+
 # Create MinIO connection for Airflow
 echo "[INFO] >>> Running create_minio_conn.sh <<<"
 
