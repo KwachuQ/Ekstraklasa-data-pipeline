@@ -82,7 +82,7 @@ async def run():
         print('RESULT:' + json.dumps(output))
         
         # Exit with error if no matches were extracted
-        if result[\\"total_matches\\"'] == 0 and result[\\"errors\\"]:
+        if result[\\"total_matches\\"] == 0 and result[\\"errors\\"]:
             sys.exit(1)
             
     except FileNotFoundError as e:
@@ -206,7 +206,7 @@ if ndjson_files:
 
 # DAG Definition
 with DAG(
-    dag_id='bronze_extract_historical_matches',
+    dag_id='10_bronze_extract_historical_matches',
     default_args=default_args,
     description='Extract historical matches from league_config.yaml to MinIO bronze layer',
     schedule=None,  # Manual trigger only

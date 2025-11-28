@@ -47,23 +47,31 @@ def fetch_match_statistics(**kwargs):
     
     for season in seasons:
         print(f"\n=== Processing season: {season} ===")
-        
-        # Query to get match_ids from full_matches_data table filtered by season_year
-        query = "SELECT match_id FROM bronze.full_matches_data WHERE season_year = %s ORDER BY match_id;"
-        records = postgres_hook.get_records(query, parameters=[season])
-        
+
+    # Query to get match_ids AND season_id from raw_matches table
+        query = """
+            SELECT match_id, season_id 
+            FROM bronze.raw_matches 
+            WHERE tournament_id = %s
+            AND season_year = %s 
+            ORDER BY match_id;
+        """
+        records = postgres_hook.get_records(query, parameters=[TOURNAMENT_ID, season])
+
         if not records:
-            print(f"No match_ids found in full_matches_data table for season_year {season}")
+            print(f"No match_ids found in raw_matches table for season_year {season}")
             continue
-        
-        match_ids = [record[0] for record in records]
-        print(f"Found {len(match_ids)} matches for season {season}")
-        
-        # Prepare match_ids as JSON
-        match_ids_json = json.dumps(match_ids)
-        
-        # Call ETL worker to fetch statistics
-        command = f"""docker exec etl_worker python -c "
+
+    # Get season_id from first record (all should be same for this season)
+    season_id = records[0][1]
+    match_ids = [record[0] for record in records]
+    print(f"Found {len(match_ids)} matches for season {season} (season_id={season_id})")
+
+    # Prepare match_ids as JSON
+    match_ids_json = json.dumps(match_ids)
+
+    # Call ETL worker to fetch statistics
+    command = f"""docker exec etl_worker python -c "
 import json
 from etl.bronze.extractors.statistics_extractor import StatisticsFetcher
 
@@ -71,7 +79,8 @@ match_ids = {match_ids_json}
 
 fetcher = StatisticsFetcher(
     rapidapi_key='{rapidapi_key}',
-    tournament_id={TOURNAMENT_ID}
+    tournament_id={TOURNAMENT_ID},
+    season_id={season_id}
 )
 
 result = fetcher.fetch_and_save_statistics(match_ids)
@@ -83,46 +92,46 @@ print('STATS_RESULT:' + json.dumps({{
     'total': len(match_ids)
 }}))
 " """
-        
-        try:
-            result = subprocess.run(
-                command, 
-                shell=True, 
-                capture_output=True, 
-                text=True, 
-                timeout=3600  # 1 hour per season
-            )
-            
-            if result.returncode != 0:
-                print(f"Execution error for season {season}: {result.stderr}")
-                print(f"stdout: {result.stdout}")
-                raise AirflowFailException(f"Statistics extraction failed for season {season}")
-            
-            print(f"Output:\n{result.stdout}")
-            
-            # Parse result
-            for line in result.stdout.split('\n'):
-                if line.startswith('STATS_RESULT:'):
-                    stats_result = json.loads(line.replace('STATS_RESULT:', ''))
-                    print(f"\n✅ Season {season} results:")
-                    print(f"  • Fetched: {stats_result['fetched']}")
-                    print(f"  • Failed: {stats_result['failed']}")
-                    print(f"  • Skipped: {stats_result['skipped']}")
-                    print(f"  • Total: {stats_result['total']}")
-                    
-                    total_summary['total_fetched'] += stats_result['fetched']
-                    total_summary['total_failed'] += stats_result['failed']
-                    total_summary['total_skipped'] += stats_result['skipped']
-                    break
-            else:
-                raise AirflowFailException(f"No valid result from statistics fetch for season {season}")
-                
-        except subprocess.TimeoutExpired:
-            print(f"Timeout for season {season} - process exceeded 1 hour")
-            raise AirflowFailException(f"Statistics fetch timeout for season {season}")
-        except Exception as e:
-            print(f"Error processing season {season}: {type(e).__name__}: {e}")
-            raise
+
+    try:
+        result = subprocess.run(
+            command, 
+            shell=True, 
+            capture_output=True, 
+            text=True, 
+            timeout=3600  # 1 hour per season
+        )
+
+        if result.returncode != 0:
+            print(f"Execution error for season {season}: {result.stderr}")
+            print(f"stdout: {result.stdout}")
+            raise AirflowFailException(f"Statistics extraction failed for season {season}")
+
+        print(f"Output:\n{result.stdout}")
+
+        # Parse result
+        for line in result.stdout.split('\n'):
+            if line.startswith('STATS_RESULT:'):
+                stats_result = json.loads(line.replace('STATS_RESULT:', ''))
+                print(f"\n✅ Season {season} results:")
+                print(f"  • Fetched: {stats_result['fetched']}")
+                print(f"  • Failed: {stats_result['failed']}")
+                print(f"  • Skipped: {stats_result['skipped']}")
+                print(f"  • Total: {stats_result['total']}")
+
+                total_summary['total_fetched'] += stats_result['fetched']
+                total_summary['total_failed'] += stats_result['failed']
+                total_summary['total_skipped'] += stats_result['skipped']
+                break
+        else:
+            raise AirflowFailException(f"No valid result from statistics fetch for season {season}")
+
+    except subprocess.TimeoutExpired:
+        print(f"Timeout for season {season} - process exceeded 1 hour")
+        raise AirflowFailException(f"Statistics fetch timeout for season {season}")
+    except Exception as e:
+        print(f"Error processing season {season}: {type(e).__name__}: {e}")
+        raise
     
     print(f"\nAll seasons processing completed!")
     print(f"Total summary:")

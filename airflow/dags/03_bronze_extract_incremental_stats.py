@@ -130,15 +130,29 @@ def fetch_statistics(**context):
     # Pass match_ids as JSON
     match_ids_json = json.dumps(missing_ids)
     
+    # Build command that gets season_id from config inside the worker
     command = f"""docker exec etl_worker python -c "
 import json
+import sys
+sys.path.insert(0, '/opt')
+
 from etl.bronze.extractors.statistics_extractor import StatisticsFetcher
+from etl.utils.config_loader import get_active_config
+
+# Get season_id from config
+config = get_active_config()
+season_id = config['season_id']
+tournament_id = config['league_id']
 
 match_ids = {match_ids_json}
 
+print(f'Fetching statistics for {{len(match_ids)}} matches...')
+print(f'Tournament ID: {{tournament_id}}, Season ID: {{season_id}}')
+
 fetcher = StatisticsFetcher(
     rapidapi_key='{rapidapi_key}',
-    tournament_id={TOURNAMENT_ID}
+    tournament_id=tournament_id,
+    season_id=season_id
 )
 
 result = fetcher.fetch_and_save_statistics(match_ids)
@@ -157,7 +171,7 @@ print('STATS_RESULT:' + json.dumps({{
             shell=True, 
             capture_output=True, 
             text=True, 
-            timeout=1800  # 30 minut
+            timeout=1800  # 30 minutes
         )
         
         if result.returncode != 0:
@@ -216,9 +230,6 @@ try:
     
     batch_id = str(uuid.uuid4())[:8]
     today = datetime.now().strftime('%Y-%m-%d')
-    
-    # Find files from today's date
-    prefix = f'match_statistics/season_2025_26/date={today}/'
     
     objects = list(minio_client.list_objects('bronze', prefix=prefix, recursive=True))
     json_files = [obj for obj in objects if obj.object_name.endswith('.json')]

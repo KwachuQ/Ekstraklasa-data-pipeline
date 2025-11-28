@@ -49,8 +49,8 @@ class StatisticsFetcher:
     def __init__(
         self,
         rapidapi_key: str,
+        season_id: int,
         tournament_id: int = 202,
-        season_folder: str = "season_2025_26",
         rate_limit_delay: float = 1.5
     ):
         """
@@ -59,15 +59,17 @@ class StatisticsFetcher:
         Args:
             rapidapi_key: RapidAPI key for authentication
             tournament_id: Tournament identifier (default: 202 = Ekstraklasa)
-            season_folder: Season folder name for MinIO paths
+            season_id: Season identifier (numeric ID from config, e.g., 77559)
             rate_limit_delay: Delay between requests in seconds
         """
         if not rapidapi_key:
             raise ValueError("rapidapi_key is required")
-        
+        if not season_id:
+            raise ValueError("season_id is required")
+    
         self.rapidapi_key = rapidapi_key
         self.tournament_id = tournament_id
-        self.season_folder = season_folder
+        self.season_id = season_id
         self.rate_limit_delay = rate_limit_delay
         
         # API configuration
@@ -88,7 +90,7 @@ class StatisticsFetcher:
         
         logger.info(
             f"StatisticsFetcher initialized: tournament_id={tournament_id}, "
-            f"season={season_folder}"
+            f"season={season_id}"
         )
     
     def _get_object_name(self, match_id: int, match_date: Optional[str] = None) -> str:
@@ -97,18 +99,17 @@ class StatisticsFetcher:
         
         Args:
             match_id: Match identifier
-            match_date: Match date (YYYY-MM-DD), uses today if None
+            match_date: IGNORED (kept for backwards compatibility)
             
         Returns:
             Full object path in MinIO
         """
-        if match_date is None:
-            match_date = datetime.now().strftime('%Y-%m-%d')
-        
         return (
-            f"match_statistics/{self.season_folder}/"
-            f"date={match_date}/match_{match_id}.json"
-        )
+            f"match_statistics/"
+            f"tournament_id={self.tournament_id}/"
+            f"season_id={self.season_id}/"
+            f"match_{match_id}.json"
+    )
     
     def _extract_match_date(self, statistics_data: Dict[str, Any]) -> Optional[str]:
         """
@@ -129,18 +130,17 @@ class StatisticsFetcher:
             logger.warning(f"Could not extract match date: {e}")
             return datetime.now().strftime('%Y-%m-%d')
     
-    def statistics_exist(self, match_id: int, match_date: Optional[str] = None) -> bool:
+    def statistics_exist(self, match_id: int) -> bool:
         """
         Check if statistics already exist in MinIO
         
         Args:
             match_id: Match identifier
-            match_date: Match date (optional)
             
         Returns:
             True if statistics exist, False otherwise
         """
-        object_name = self._get_object_name(match_id, match_date)
+        object_name = self._get_object_name(match_id)
         
         try:
             self.minio_client.stat_object(self.bucket_name, object_name)
@@ -271,7 +271,7 @@ class StatisticsFetcher:
                     "source": "sofascore_api",
                     "endpoint": self.API_ENDPOINT,
                     "tournament_id": self.tournament_id,
-                    "season": self.season_folder,
+                    "season_id": self.season_id,
                     "api_version": "v1"
                 }
             }

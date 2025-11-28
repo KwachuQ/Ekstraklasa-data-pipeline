@@ -127,8 +127,8 @@ needed_match_ids = {{{match_ids_str}}}
 
 print(f'Looking for statistics for {{len(needed_match_ids)}} matches...')
 
-# Get all statistics files from season folders
-objects = list(client.list_objects('bronze', prefix='match_statistics/', recursive=True))
+# Get all statistics files from new tournament_id structure
+objects = list(client.list_objects('bronze', prefix='match_statistics/tournament_id={TOURNAMENT_ID}/', recursive=True))
 json_files = [obj for obj in objects if obj.object_name.endswith('.json') and 'match_' in obj.object_name]
 
 print(f'Found {{len(json_files)}} total statistics files in MinIO')
@@ -149,10 +149,10 @@ for obj in json_files:
                     'match_id': match_id
                 }})
                 
-                # Extract season folder
+                # Extract season_id folder (e.g., season_id=77559)
                 parts = obj.object_name.split('/')
-                if len(parts) > 1:
-                    season_folders.add(parts[1])
+                if len(parts) > 2:
+                    season_folders.add(parts[2])
     except Exception as e:
         continue
 
@@ -193,7 +193,7 @@ print('RESULT:' + json.dumps(result))
             print(f"  • Season folders: {', '.join(minio_data['season_folders'])}")
             
             if minio_data['available_count'] == 0:
-                print("  • Brak nowych statystyk do załadowania")
+                print("  • No new statistics to load")
             else:
                 print(f"  • Ready to load {minio_data['available_count']} statistics files")
             
