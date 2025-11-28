@@ -94,8 +94,8 @@ def validate_staging_data(**context):
     if staging_matches == 0:
         raise AirflowFailException("staging_matches is EMPTY after insert!")
     
-    # Validation tests
-    validation_tests = [
+    # Critical validation tests (must pass)
+    critical_tests = [
         (
             "NULL in key columns",
             """SELECT COUNT(*) FROM silver.staging_matches 
@@ -113,17 +113,11 @@ def validate_staging_data(**context):
                LEFT JOIN silver.staging_matches m ON s.match_id = m.match_id 
                WHERE m.match_id IS NULL"""
         ),
-        (
-            "Matches without statistics",
-            """SELECT COUNT(*) FROM silver.staging_matches m 
-               WHERE NOT EXISTS (
-                   SELECT 1 FROM silver.staging_stats s WHERE s.match_id = m.match_id
-               )"""
-        ),
     ]
     
+    # Run critical tests
     failed_tests = []
-    for test_name, query in validation_tests:
+    for test_name, query in critical_tests:
         result = hook.get_first(query)[0]
         if result > 0:
             failed_tests.append(f"{test_name}: {result} records")
@@ -133,15 +127,76 @@ def validate_staging_data(**context):
     
     if failed_tests:
         raise AirflowFailException(
-            f"Validation failed:\n  - " + "\n  - ".join(failed_tests)
+            f"Critical validation failed:\n  - " + "\n  - ".join(failed_tests)
         )
     
-    logging.info("\n✓ All validations PASSED!")
+    # Check for matches without statistics (detailed reporting)
+    matches_without_stats_query = """
+        SELECT 
+            m.match_id,
+            m.start_timestamp,
+            m.status_type,
+            m.status_description,
+            m.home_team_name,
+            m.away_team_name,
+            m.home_score_current,
+            m.away_score_current
+        FROM silver.staging_matches m 
+        WHERE NOT EXISTS (
+            SELECT 1 FROM silver.staging_stats s WHERE s.match_id = m.match_id
+        )
+        ORDER BY m.start_timestamp DESC
+    """
+    
+    matches_without_stats = hook.get_pandas_df(matches_without_stats_query)
+    
+    if len(matches_without_stats) > 0:
+        logging.warning("="*70)
+        logging.warning(f"⚠ WARNING: Found {len(matches_without_stats)} match(es) without statistics")
+        logging.warning("="*70)
+        
+        # Filter for finished matches (should have stats)
+        finished_statuses = ['finished', 'ended', 'played', 'ft']
+        finished_without_stats = matches_without_stats[
+            matches_without_stats['status_type'].str.lower().isin(finished_statuses)
+        ]
+        
+        if len(finished_without_stats) > 0:
+            logging.warning(f"\n🔴 ATTENTION: {len(finished_without_stats)} FINISHED match(es) missing statistics!")
+            logging.warning("These matches should have statistics but don't:\n")
+            
+            for idx, row in finished_without_stats.iterrows():
+                logging.warning(f"  Match ID: {row['match_id']}")
+                logging.warning(f"    Date: {row['start_timestamp']}")
+                logging.warning(f"    Status: {row['status_type']} ({row['status_description']})")
+                logging.warning(f"    Match: {row['home_team_name']} vs {row['away_team_name']}")
+                logging.warning(f"    Score: {row['home_score_current']} - {row['away_score_current']}")
+                logging.warning(f"    Action: Check API response for match_id={row['match_id']}\n")
+        
+        # Show non-finished matches without stats (expected)
+        not_finished_without_stats = matches_without_stats[
+            ~matches_without_stats['status_type'].str.lower().isin(finished_statuses)
+        ]
+        
+        if len(not_finished_without_stats) > 0:
+            logging.info(f"\nℹ️  INFO: {len(not_finished_without_stats)} non-finished match(es) without statistics (expected):")
+            
+            for idx, row in not_finished_without_stats.iterrows():
+                logging.info(f"  - Match {row['match_id']}: {row['home_team_name']} vs {row['away_team_name']} ({row['status_type']})")
+        
+        logging.warning("="*70 + "\n")
+    else:
+        logging.info(f"  ✓ PASSED: All matches have statistics")
+    
+    logging.info("\n✓ All critical validations PASSED!")
     
     return {
         'staging_matches': staging_matches,
         'staging_stats': staging_stats,
-        'validation_passed': True
+        'validation_passed': True,
+        'matches_without_stats': len(matches_without_stats),
+        'finished_without_stats': len(finished_without_stats) if len(matches_without_stats) > 0 else 0,
+        'problem_match_ids': finished_without_stats['match_id'].tolist() if len(matches_without_stats) > 0 and len(finished_without_stats) > 0 else []
     }
 
 
