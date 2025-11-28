@@ -2,6 +2,7 @@ from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.operators.empty import EmptyOperator
+from airflow.providers.postgres.hooks.postgres import PostgresHook
 from airflow.exceptions import AirflowFailException
 import subprocess
 import json
@@ -23,6 +24,8 @@ def ensure_table_exists(**context):
     Check if bronze.raw_matches table exists and create it if not
     """
     logging.info("Checking if bronze.raw_matches table exists...")
+    
+    hook = PostgresHook(postgres_conn_id='postgres_default')
     
     check_and_create_sql = """
     DO $$
@@ -56,14 +59,11 @@ def ensure_table_exists(**context):
     $$;
     """
     
-    cmd = f'''docker exec postgres psql -U airflow -d dwh -c "{check_and_create_sql}"'''
-    
-    result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
-    
-    if result.returncode != 0:
-        raise AirflowFailException(f"Table check/create failed: {result.stderr}")
-    
-    logging.info(f"Table check result:\n{result.stdout}")
+    try:
+        hook.run(check_and_create_sql)
+        logging.info("Table check/create completed successfully")
+    except Exception as e:
+        raise AirflowFailException(f"Table check/create failed: {str(e)}")
     
     return {'table_ready': True}
 
