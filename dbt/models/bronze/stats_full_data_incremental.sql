@@ -1,5 +1,6 @@
 {{
   config(
+    enabled=false,
     materialized='incremental',
     alias='full_stats_data',
     unique_key=['match_id', 'period', 'group_name', 'statistic_key'],
