@@ -130,10 +130,14 @@ def check_existing_statistics(**context):
         return {
             'missing_match_ids': [],
             'missing_count': 0,
-            'already_loaded': 0
+            'already_loaded': 0,
+            'tournament_id': matches_info.get('tournament_id'),
+            'season_id': matches_info.get('season_id')
         }
     
     match_ids = matches_info['match_ids']
+    tournament_id = matches_info['tournament_id']
+    season_id = matches_info['season_id']
     
     logging.info(f"Checking which of the {len(match_ids)} matches already have statistics...")
     
@@ -155,7 +159,9 @@ def check_existing_statistics(**context):
         return {
             'missing_match_ids': match_ids,
             'missing_count': len(match_ids),
-            'already_loaded': 0
+            'already_loaded': 0,
+            'tournament_id': tournament_id,
+            'season_id': season_id
         }
     
     # Table exists, check for existing statistics
@@ -182,7 +188,9 @@ def check_existing_statistics(**context):
     return {
         'missing_match_ids': missing_ids,
         'missing_count': len(missing_ids),
-        'already_loaded': len(existing_ids)
+        'already_loaded': len(existing_ids),
+        'tournament_id': tournament_id,
+        'season_id': season_id
     }
 
 def fetch_statistics(**context):
