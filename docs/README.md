@@ -149,8 +149,20 @@ Switch League (e.g., to LaLiga):
     league_id: 8
   active_season:
     name: "LaLiga 24/25"
-    season_id: 61643  # Use find_season_id.py
+    season_id: 61643 
 ```
+To find the correct `season_id` for any league, use the helper script:
+
+```bash
+# From project root
+export RAPIDAPI_KEY={YOUR_API_KEY}
+python -m etl.utils.find_season_id
+
+# Or for a specific league
+export RAPIDAPI_KEY={YOUR_API_KEY}
+python -m etl.utils.find_season_id <league_id> <league_name>
+```
+
 See config/league_config.yaml for complete documentation and examples.
 
 ## Data Flows
@@ -228,19 +240,10 @@ In order to export gold layer tables to .csv file (to use with other data viz to
 ## Security Notes
 
 1. **Change ALL default passwords:**
-   - PostgreSQL: `airflow:airflow`
-   - MinIO: `minio:minio123`
-   - Airflow: `airflow:airflow`
 
 2. **Secure API credentials:**
-   - Store `RAPIDAPI_KEY` in environment variables or secret manager
-   - Never commit API keys to version control
 
 3. **Use .env file for local development:**
-   ```bash
-   cp docker/.env.example docker/.env
-   # Edit docker/.env with your credentials
-   ```
 
 4. **For production:**
    - Use Docker secrets
