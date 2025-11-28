@@ -239,11 +239,11 @@ In order to export gold layer tables to .csv file (to use with other data viz to
    
 ## Security Notes
 
-1. **Change ALL default passwords:**
+1. **Change ALL default passwords**
 
-2. **Secure API credentials:**
+2. **Secure API credentials**
 
-3. **Use .env file for local development:**
+3. **Use .env file for local development**
 
 4. **For production:**
    - Use Docker secrets
