@@ -139,6 +139,26 @@ def check_existing_statistics(**context):
     
     hook = PostgresHook(postgres_conn_id='postgres_default')
     
+    # First check if the table exists
+    table_check_query = """
+        SELECT EXISTS (
+            SELECT FROM information_schema.tables 
+            WHERE table_schema = 'bronze' 
+            AND table_name = 'raw_stats'
+        );
+    """
+    
+    table_exists = hook.get_first(table_check_query)[0]
+    
+    if not table_exists:
+        logging.info("Table bronze.raw_stats does not exist yet - all matches need to be fetched")
+        return {
+            'missing_match_ids': match_ids,
+            'missing_count': len(match_ids),
+            'already_loaded': 0
+        }
+    
+    # Table exists, check for existing statistics
     placeholders = ','.join(['%s'] * len(match_ids))
     query = f"""
         SELECT DISTINCT match_id
@@ -162,11 +182,8 @@ def check_existing_statistics(**context):
     return {
         'missing_match_ids': missing_ids,
         'missing_count': len(missing_ids),
-        'already_loaded': len(existing_ids),
-        'tournament_id': matches_info['tournament_id'],
-        'season_id': matches_info['season_id']
+        'already_loaded': len(existing_ids)
     }
-
 
 def fetch_statistics(**context):
     """Fetch statistics for missing matches"""
