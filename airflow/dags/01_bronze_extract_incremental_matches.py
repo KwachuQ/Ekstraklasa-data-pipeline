@@ -97,9 +97,14 @@ async def run():
 asyncio.run(run())
 " """
     
-    
     try:
-        result = subprocess.run(command, shell=True, capture_output=True, text=True, timeout=600)
+        result = subprocess.run(
+            command, 
+            shell=True, 
+            capture_output=True, 
+            text=True, 
+            timeout=600
+        )
         
         # Print stderr (errors) if present
         if result.stderr:

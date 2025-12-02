@@ -213,15 +213,23 @@ def load_to_raw_stats(**context):
     
     print(f"Loading {fetch_result['fetched']} statistics from MinIO to PostgreSQL...")
     
-    # Use existing DAG for loading
-    # Alternatively: direct load from MinIO
-    
-    command = """docker exec etl_worker python -c "
+    # Get season_id from config INSIDE the docker container
+    command = f"""docker exec etl_worker python -c "
 import json
 import psycopg2
 from minio import Minio
 import uuid
 from datetime import datetime
+import sys
+sys.path.insert(0, '/opt')
+
+# Get season_id from config
+from etl.utils.config_loader import get_active_config
+config = get_active_config()
+season_id = config['season_id']
+
+# Define prefix for statistics files
+stats_prefix = f'match_statistics/tournament_id={TOURNAMENT_ID}/season_id={{season_id}}/'
 
 try:
     minio_client = Minio('minio:9000', access_key='minio', secret_key='minio123', secure=False)
@@ -229,12 +237,11 @@ try:
     pg_cur = pg_conn.cursor()
     
     batch_id = str(uuid.uuid4())[:8]
-    today = datetime.now().strftime('%Y-%m-%d')
     
-    objects = list(minio_client.list_objects('bronze', prefix=prefix, recursive=True))
+    objects = list(minio_client.list_objects('bronze', prefix=stats_prefix, recursive=True))
     json_files = [obj for obj in objects if obj.object_name.endswith('.json')]
     
-    print(f'Found {len(json_files)} statistics files from today')
+    print(f'Found {{len(json_files)}} statistics files')
     
     loaded = 0
     duplicates = 0
@@ -264,7 +271,7 @@ try:
             ''', (
                 json.dumps(stats_data),
                 match_id,
-                202,
+                {TOURNAMENT_ID},
                 obj.object_name,
                 batch_id
             ))
@@ -273,19 +280,19 @@ try:
             
             if loaded % 10 == 0:
                 pg_conn.commit()
-                print(f'Progress: {loaded} loaded, {duplicates} duplicates')
+                print(f'Progress: {{loaded}} loaded, {{duplicates}} duplicates')
                 
         except Exception as e:
-            print(f'Error processing {obj.object_name}: {e}')
+            print(f'Error processing {{obj.object_name}}: {{e}}')
             continue
     
     pg_conn.commit()
     pg_conn.close()
     
-    print(f'LOAD_RESULT:{loaded}:{duplicates}')
+    print(f'LOAD_RESULT:{{loaded}}:{{duplicates}}')
     
 except Exception as e:
-    print(f'LOAD_ERROR:{str(e)}')
+    print(f'LOAD_ERROR:{{str(e)}}')
     raise
 " """
     

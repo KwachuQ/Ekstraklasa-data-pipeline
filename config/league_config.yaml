@@ -9,18 +9,18 @@
 # ----------------------------
 # Currently selected league for data extraction
 active_league:
-  country: "Spain"
-  country_id: 32
-  league_name: "LaLiga"
-  league_id: 8
+  country: "Poland"
+  country_id: 47
+  league_name: "Ekstraklasa"
+  league_id: 202
 
 # Active Season Configuration
 # ---------------------------
 # Currently selected season for data extraction
 active_season:
-  name: "LaLiga 25/26"
+  name: "Ekstraklasa 25/26"
   year: "25/26"
-  season_id: 77559
+  season_id: 76477
 
 # ETL Configuration
 # -----------------
@@ -34,10 +34,10 @@ etl:
   # All dates must be in YYYY-MM-DD format
   # Set to null to disable filtering for that boundary
   
-  start_date: "2025-08-01"           # Include matches from this date onwards (inclusive)
+  start_date: null           # Include matches from this date onwards (inclusive)
                              # Example: "2024-08-01" to start from August 1st, 2024
   
-  end_date: "2025-08-31"             # Include matches up to this date (inclusive)
+  end_date: null             # Include matches up to this date (inclusive)
                              # Example: "2024-12-31" to end at December 31st, 2024
   
   # Incremental Extraction Mode
