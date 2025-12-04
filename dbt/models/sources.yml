@@ -69,3 +69,4 @@ sources:
       - name: dim_seasons
       - name: dim_tournaments
       - name: dim_stat_types
+      - name: full_upcoming_fixtures
