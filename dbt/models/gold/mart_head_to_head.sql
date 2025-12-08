@@ -61,5 +61,5 @@ select
 from h2h_matches h
 left join last_5_matches l5 on h.team_id_1 = l5.team_id_1 and h.team_id_2 = l5.team_id_2
 group by h.team_id_1, h.team_id_2, l5.last_5_results
-having count(*) >= 3
+having count(*) >= 1
 order by total_matches desc, last_meeting_date desc
