@@ -8,11 +8,12 @@ with matches as (
         home_team_id as team_id,
         home_team_name as team_name,
         match_id,
+        start_timestamp,
         match_date,
         case 
             when winner_code = 1 then 'W'
-            when winner_code = 2 then 'D'
-            when winner_code = 3 then 'L'
+            when winner_code = 2 then 'L'
+            when winner_code = 3 then 'D'
         end as result,
         case 
             when winner_code = 1 then 3
@@ -35,11 +36,12 @@ with matches as (
         away_team_id as team_id,
         away_team_name as team_name,
         match_id,
+        start_timestamp,
         match_date,
         case 
-            when winner_code = 3 then 'W'
-            when winner_code = 2 then 'D'
+            when winner_code = 2 then 'W'
             when winner_code = 1 then 'L'
+            when winner_code = 3 then 'D'
         end as result,
         case 
             when winner_code = 3 then 3
@@ -56,7 +58,7 @@ with matches as (
 last_5_matches as (
     select
         m.*,
-        row_number() over (partition by team_id, season_id order by match_date desc) as match_rank
+        row_number() over (partition by team_id, season_id order by start_timestamp desc) as match_rank
     from matches m
 ),
 form_last_5 as (
@@ -66,7 +68,7 @@ form_last_5 as (
         season_id,
         season_name,
         season_year,
-        string_agg(result, '' order by match_date desc) as last_5_results,
+        string_agg(result, '' order by start_timestamp desc) as last_5_results,
         sum(points) as points_last_5,
         sum(case when result = 'W' then 1 else 0 end) as wins_last_5,
         sum(case when result = 'D' then 1 else 0 end) as draws_last_5,
