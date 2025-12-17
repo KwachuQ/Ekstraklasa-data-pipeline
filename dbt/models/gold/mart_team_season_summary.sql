@@ -73,6 +73,28 @@ away_halftime_stats as (
         round(avg(home_score_period2), 2) as away_avg_conceded_2h
     from match_data
     group by away_team_id, season_id
+),
+home_away_record as (
+    select
+        home_team_id as team_id,
+        season_id,
+        count(*) as home_matches,
+        sum(case when winner_code = 1 then 1 else 0 end) as home_wins,
+        sum(case when winner_code = 3 then 1 else 0 end) as home_draws,
+        sum(case when winner_code = 2 then 1 else 0 end) as home_losses
+    from match_data
+    group by home_team_id, season_id
+),
+away_record as (
+    select
+        away_team_id as team_id,
+        season_id,
+        count(*) as away_matches,
+        sum(case when winner_code = 2 then 1 else 0 end) as away_wins,
+        sum(case when winner_code = 3 then 1 else 0 end) as away_draws,
+        sum(case when winner_code = 1 then 1 else 0 end) as away_losses
+    from match_data
+    group by away_team_id, season_id
 )
 select
     ov.season_id,
@@ -95,6 +117,14 @@ select
     ov.goals_conceded_per_game,
     ov.clean_sheets,
     ov.clean_sheet_percentage,
+    
+    -- Home/Away record
+    coalesce(har.home_wins, 0) as home_wins,
+    coalesce(har.home_draws, 0) as home_draws,
+    coalesce(har.home_losses, 0) as home_losses,
+    coalesce(awr.away_wins, 0) as away_wins,
+    coalesce(awr.away_draws, 0) as away_draws,
+    coalesce(awr.away_losses, 0) as away_losses,
     
     -- Attack stats
     att.total_xg,
@@ -226,5 +256,11 @@ left join home_halftime_stats hhs
 left join away_halftime_stats ahs
     on ov.team_id = ahs.team_id
     and ov.season_id = ahs.season_id
+left join home_away_record har
+    on ov.team_id = har.team_id
+    and ov.season_id = har.season_id
+left join away_record awr
+    on ov.team_id = awr.team_id
+    and ov.season_id = awr.season_id
 
 order by ov.season_year desc, ov.total_points desc

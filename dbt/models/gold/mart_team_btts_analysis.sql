@@ -45,7 +45,13 @@ team_overall_stats as (
         sum(btts)::numeric / nullif(count(*), 0) * 100 as btts_pct,
         sum(clean_sheet)::numeric / nullif(count(*), 0) * 100 as clean_sheet_pct,
         round(avg(xg_for), 2) as avg_xg,
-        round(avg(xg_against), 2) as avg_xga
+        round(avg(xg_against), 2) as avg_xga,
+        
+        -- Overall conceding over/under
+        sum(case when goals_against >= 1 then 1 else 0 end)::numeric / nullif(count(*), 0) * 100 as overall_conceded_over_05_pct,
+        sum(case when goals_against >= 2 then 1 else 0 end)::numeric / nullif(count(*), 0) * 100 as overall_conceded_over_15_pct,
+        sum(case when goals_against >= 3 then 1 else 0 end)::numeric / nullif(count(*), 0) * 100 as overall_conceded_over_25_pct,
+        sum(case when goals_against >= 4 then 1 else 0 end)::numeric / nullif(count(*), 0) * 100 as overall_conceded_over_35_pct
     from (
         select
             home_team_id as team_id,
@@ -160,6 +166,10 @@ select
     round(ov.clean_sheet_pct, 1) as overall_clean_sheet_pct,
     ov.avg_xg as overall_avg_xg,
     ov.avg_xga as overall_avg_xga,
+    round(coalesce(ov.overall_conceded_over_05_pct, 0), 1) as overall_conceded_over_05_pct,
+    round(coalesce(ov.overall_conceded_over_15_pct, 0), 1) as overall_conceded_over_15_pct,
+    round(coalesce(ov.overall_conceded_over_25_pct, 0), 1) as overall_conceded_over_25_pct,
+    round(coalesce(ov.overall_conceded_over_35_pct, 0), 1) as overall_conceded_over_35_pct,
     
     -- Home stats
     hs.home_matches_played,
