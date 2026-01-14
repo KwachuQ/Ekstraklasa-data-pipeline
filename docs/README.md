@@ -81,15 +81,19 @@ Other:
 
 ## Quick Start
 
-To use SofaScore API you need an [API key](https://rapidapi.com/apidojo/api/sofascore/pricing). Update your `.env` file with credentials.
+To use SofaScore API you need an [API key](https://rapidapi.com/apidojo/api/sofascore/pricing).
 
-1. Start services:
+1. Initialize secrets and start services:
 ```sh 
-    cd docker
-    chmod +x init_secrets.sh
-    ./init_secrets.sh
-    Edit .env to add your RAPIDAPI_KEY
-    docker-compose up -d
+cd docker
+chmod +x init_secrets.sh
+./init_secrets.sh
+
+# Edit the secret files with your credentials:
+# - secrets/rapidapi_key.txt  (your RapidAPI key)
+# - secrets/aws_rds_password.txt  (optional: AWS RDS password)
+
+docker compose up -d
 ```
 
 2. Access endpoints:
@@ -361,17 +365,15 @@ From Ekstraklasa 24/25 season extraction:
 
 ## Security Notes
 
-1. **Change ALL default passwords**
+This project uses **Docker Secrets** for secure credential management:
 
-2. **Secure API credentials**
-
-3. **Use .env file for local development**
-
-4. **For production:**
-   - Use Docker secrets
-   - Enable HTTPS/TLS for all services
-   - Configure proper firewall rules
-   - Use strong, unique passwords
+- All secrets are stored in `docker/secrets/` (gitignored)
+- Run `init_secrets.sh` to generate default secrets
+- Edit secret files before starting containers:
+  - `secrets/rapidapi_key.txt` - Your RapidAPI key
+  - `secrets/aws_rds_password.txt` - AWS RDS password  
+- For production: change default passwords in `postgres_password.txt` and `minio_root_password.txt`
+- Enable HTTPS/TLS for all services in production
 
 ## License
 
